@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lampu Merah, Lampu Hijau PUEBI — Balai Bahasa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%2032%2032%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232563eb%22/><path d=%22M16%207L25%2012V20L16%2025L7%2020V12L16%207Z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.4%22 stroke-linejoin=%22round%22/></svg>"><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+  <style>
+    /* Banner Kata Ramping & Kontras Tinggi di Atas (Optimasi HP) */
+    .puebi-word-banner {
+      max-width: min(560px, 92vw);
+      margin: 0.25rem auto 0;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid #38bdf8;
+      border-radius: 16px;
+      padding: 0.45rem 1.1rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .puebi-word-banner.prev-baku { border-color: #10b981; }
+    .puebi-word-banner.prev-tidak { border-color: #ef4444; }
+    .puebi-phase-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #7dd3fc;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .puebi-word-main {
+      font-size: clamp(1.35rem, 4.5vw, 2.1rem);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+    }
+    .puebi-prev-note {
+      font-size: 0.76rem;
+      font-weight: 800;
+      margin-top: 0.15rem;
+      min-height: 1rem;
+    }
+    .level-pill-group {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 12px;
+      padding: 0.22rem;
+      gap: 0.22rem;
+    }
+    .level-btn {
+      border: none;
+      background: transparent;
+      color: #cbd5e1;
+      padding: 0.35rem 0.65rem;
+      border-radius: 9px;
+      font-weight: 800;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+    .level-btn.active {
+      background: linear-gradient(135deg, #38bdf8, #4361ee);
+      color: #ffffff;
+    }
+    #puebi-laser-toast {
+      position: fixed;
+      top: 7.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: #ffffff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: clamp(0.82rem, 2.6vw, 0.98rem);
+      z-index: 65;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.55);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body style="overflow: hidden; touch-action: none;">
+
+  <!-- 3D PUEBI Track Canvas -->
+  <div id="game-container">
+    <div id="canvas-container"></div>
+  </div>
+
+  <!-- Toast Laser Pembetulan Kata -->
+  <div id="puebi-laser-toast">Apotik → Yang baku: Apotek</div>
+
+  <!-- HUD Layer -->
+  <div class="hud-layer">
+    <!-- Top Bar -->
+    <div class="top-hud-bar">
+      <div style="display: flex; gap: 0.45rem; align-items: center;">
+        <a href="index.html" class="btn btn-secondary hud-interactive" style="padding: 0.45rem 0.85rem; border-radius: 999px; font-size: 0.82rem;">
+          Kota
+        </a>
+        <div class="hud-badge-box">
+          
+          <span style="color: #fbbf24; font-size: 0.9rem;">Balai Bahasa PUEBI</span>
+        </div>
+      </div>
+
+      <!-- Mode SD / SMP + Mulai + Suara -->
+      <div style="display: flex; gap: 0.4rem; align-items: center;" class="hud-interactive">
+        <div class="level-pill-group">
+          <button id="btn-puebi-sd" class="level-btn active">SD</button>
+          <button id="btn-puebi-smp" class="level-btn">SMP</button>
+        </div>
+        <button id="btn-puebi-start" class="btn btn-primary" style="padding: 0.42rem 0.8rem; font-size: 0.8rem;">
+          Mulai
+        </button>
+        <button id="btn-toggle-sound" class="btn btn-secondary" style="padding: 0.42rem 0.7rem; border-radius: 999px;"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+      </div>
+
+      <!-- Progress Jarak -->
+      <div class="hud-score-box">
+        <span style="font-weight: 800; color: #38bdf8;"><span id="hud-puebi-pct">0%</span></span>
+      </div>
+    </div>
+
+    <!-- Banner Kata Ramping & Kontras Tinggi (Warna NETRAL saat baca agar siswa benar-benar membaca!) -->
+    <div id="puebi-word-banner" class="puebi-word-banner">
+      <div id="puebi-phase-tag" class="puebi-phase-tag">BAKU = LARI • TIDAK BAKU = DIAM TOTAL!</div>
+      <div id="puebi-word-main" class="puebi-word-main">SIAP DI GARIS START</div>
+      <div id="puebi-prev-note" class="puebi-prev-note"></div>
+    </div>
+
+    <!-- Kanan Atas: Peringkat Kelas + Tombol Emot Bulat Dropdown -->
+    <div class="geo-right-stack" style="position: absolute; top: 4.8rem; right: 0.8rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+      <div class="hud-leaderboard hud-interactive" style="position: static;">
+        <h4>Peringkat Kelas <span id="puebi-player-count">(1)</span></h4>
+        <div id="puebi-rank-list">
+          <div class="rank-item" style="color: var(--text-muted);">Siap berlari...</div>
+        </div>
+      </div>
+
+      <div class="emote-dropdown-wrap">
+        <button id="btn-puebi-emote-toggle" class="emote-fab-btn" title="Pilih Emote"><svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></button>
+        <div id="puebi-emote-menu" class="emote-dropdown-menu">
+          <button class="emote-btn puebi-emote-btn" data-emote="👋" title="Halo">👋</button>
+          <button class="emote-btn puebi-emote-btn" data-emote="👍" title="Mantap">👍</button>
+          <button class="emote-btn puebi-emote-btn" data-emote="🔥" title="Semangat">🔥</button>
+          <button class="emote-btn puebi-emote-btn" data-emote="😮" title="Keren">😮</button>
+          <button class="emote-btn puebi-emote-btn" data-emote="😂" title="Tertawa">😂</button>
+          <button class="emote-btn puebi-emote-btn" data-emote="🏆" title="Juara">🏆</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Hint PC -->
+    <div class="bottom-hud-bar" style="justify-content: flex-end;">
+      <div id="pc-controls-hint" style="background: rgba(15,23,42,0.78); padding: 0.45rem 0.85rem; border-radius: 10px; font-size: 0.8rem; color: #cbd5e1;">
+        <strong>W / Panah Atas</strong>Lari saat Kata BAKU • <strong>Lepas Tombol</strong>Diam saat Kata TIDAK BAKU!
+      </div>
+    </div>
+  </div>
+
+  <!-- Analog Kiri Bawah + Tombol Lompat Kanan Bawah (HP & Tablet) -->
+  <div class="mobile-controls">
+    <div id="mobile-joystick-zone">
+      <div id="mobile-joystick-knob"></div>
+    </div>
+    <div id="mobile-jump-btn">
+      <svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      <span>LOMPAT</span>
+    </div>
+  </div>
+
+  <!-- Finish Modal -->
+  <div id="puebi-finish-modal" class="podium-overlay" style="display: none;">
+    <div class="glass-panel" style="max-width: 600px; width: 92%; padding: 2rem; text-align: center;">
+      <h1 style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #34d399, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        GARIS FINIS BALAI BAHASA! 
+      </h1>
+      <p style="color: #cbd5e1; margin: 0.4rem 0 1.2rem;">Hebat! Kamu jago membedakan kata baku dan tidak baku PUEBI!</p>
+
+      <div id="puebi-finish-standings" style="background: rgba(15,23,42,0.72); border-radius: 14px; padding: 1rem; margin-bottom: 1.4rem; text-align: left;">
+        <!-- Urutan Tercepat -->
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-puebi-play-again" class="btn btn-primary">Main Lagi</button>
+        <a href="index.html" class="btn btn-secondary">Kembali ke Kota</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/avatar3d.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/mobile-controls.js"></script>
+  <script src="js/puebi-main.js"></script>
+</body>
+</html>

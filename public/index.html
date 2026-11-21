@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>EduMetro 3D — Kota Edukasi 12 Mini Games Multiplayer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/city.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%2024%2024%22 fill=%22none%22 stroke=%22%232563eb%22 stroke-width=%222%22><rect x=%224%22 y=%222%22 width=%2216%22 height=%2220%22 rx=%222%22/><path d=%22M9 22v-4h6v4%22/></svg>">
+</head>
+<body style="overflow: hidden; height: 100dvh; max-height: 100dvh;">
+
+  <!-- 3D Live City Canvas Background -->
+  <div id="city-canvas-container"></div>
+
+  <!-- ==================== 1. MENU SCREEN (VIEWPORT-LOCKED, NO SCROLL, ZERO EMOJI) ==================== -->
+  <div id="landing-overlay">
+    <!-- Top Navbar -->
+    <nav class="landing-navbar">
+      <div class="brand-logo">
+        <div class="brand-logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
+        </div>
+        <div>
+          <div style="line-height: 1.1;">EDUMETRO 3D</div>
+          <div style="font-size: 0.7rem; color: #7dd3fc; font-weight: 600; font-family: var(--font-family);">Kota Edukasi Multiplayer</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button id="btn-landing-sound" class="btn btn-secondary" style="padding: 0 0.75rem; min-width: 44px;" aria-label="Suara" title="Suara">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
+        <button id="btn-landing-settings" class="btn btn-secondary" style="padding: 0 0.9rem; border-color: rgba(56,189,248,0.4);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Pengaturan</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Center Floating Card (Compact & Viewport-Locked — Zero Scroll!) -->
+    <main class="landing-center-card">
+      <div class="hero-kicker">EDUMETRO 3D · PRIVATE SERVER &amp; KELAS MULTIPLAYER</div>
+      <h1 class="hero-title">EDUMETRO 3D</h1>
+      <p class="hero-sub">
+        Pilih mode Single-Player (Private Server) atau Multiplayer dengan Kode Kelas ala Quizizz &amp; Kahoot.
+      </p>
+
+      <!-- Banner shortcut Dashboard Guru saat sub-mode Guru (Host) aktif -->
+      <div id="landing-teacher-banner" class="teacher-active-banner" style="display: none;">
+        <span>Mode Host Guru (Tanpa Login)</span>
+        <a href="guru.html" style="color: #0b1120; background: #f59e0b; padding: 0.22rem 0.58rem; border-radius: 7px; text-decoration: none; font-size: 0.74rem; font-weight: 800;">
+          Dashboard Guru
+        </a>
+      </div>
+
+      <!-- Mode Switcher: Single-Player vs Multiplayer -->
+      <div class="mode-tabs" role="tablist" aria-label="Pilih Mode Permainan">
+        <button type="button" id="tab-mode-solo" class="mode-tab-btn active" role="tab" aria-selected="true">
+          <span class="mode-tab-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Single-Player</span>
+          </span>
+          <span class="mode-tab-sub">Private Server</span>
+        </button>
+        <button type="button" id="tab-mode-multi" class="mode-tab-btn" role="tab" aria-selected="false">
+          <span class="mode-tab-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Multiplayer</span>
+          </span>
+          <span class="mode-tab-sub">Guru &amp; Murid</span>
+        </button>
+      </div>
+
+      <form id="enter-city-form" style="text-align: left;">
+        <!-- PANEL 1: SINGLE-PLAYER (PRIVATE SERVER) -->
+        <div id="panel-mode-solo">
+          <div class="solo-info-strip">
+            <span>Private Server — Terisolasi 100%</span>
+            <span style="color: #34d399; font-family: var(--font-display);">SOLO</span>
+          </div>
+          <div class="submode-grid">
+            <button type="button" id="btn-solo-empty" class="submode-card active">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <div>
+                <strong>Sendiri</strong>
+                <span>Tes fitur tanpa pemain lain</span>
+              </div>
+            </button>
+            <button type="button" id="btn-solo-bots" class="submode-card">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>
+              <div>
+                <strong>Dengan Bot</strong>
+                <span>Main solo + 3 Bot AI</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL 2: MULTIPLAYER (MURID GABUNG KODE / GURU BUAT SERVER) -->
+        <div id="panel-mode-multi" style="display: none;">
+          <div class="submode-grid">
+            <button type="button" id="btn-mp-role-student" class="submode-card active">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+              <div>
+                <strong>Murid</strong>
+                <span>Gabung pakai kode guru</span>
+              </div>
+            </button>
+            <button type="button" id="btn-mp-role-teacher" class="submode-card">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <div>
+                <strong>Guru (Host)</strong>
+                <span>Buat server &amp; kode kelas</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Sub-panel Murid: Input Kode 6 Digit ala Kahoot / Quizizz -->
+          <div id="mp-student-fields" class="form-group">
+            <label class="form-label" for="mp-join-code">KODE SERVER DARI GURU (6 DIGIT)</label>
+            <input type="text" id="mp-join-code" class="form-input server-code-input" placeholder="000 000" maxlength="7" inputmode="numeric" autocomplete="off">
+          </div>
+
+          <!-- Sub-panel Guru: Nama Server (Tanpa Kata Sandi — Siapa Saja Bisa Jadi Host) -->
+          <div id="mp-teacher-fields" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="mp-server-name">NAMA KELAS / SERVER</label>
+              <input type="text" id="mp-server-name" class="form-input" placeholder="Contoh: Kelas 6A" maxlength="32" autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <!-- Nama Panggilan (Dipakai di Semua Mode) -->
+        <div class="form-group">
+          <label class="form-label" for="landing-player-name" id="label-player-name">NAMA PANGGILAN</label>
+          <input type="text" id="landing-player-name" class="form-input" placeholder="Ketik namamu di sini..." maxlength="18" required autocomplete="name">
+        </div>
+
+        <!-- Kustomisasi Avatar Kompak (1 Baris Hemat Ruang — Zero Scroll!) -->
+        <div class="compact-avatar-row">
+          <div>
+            <label class="form-label" style="margin-bottom: 0.15rem;">WARNA AVATAR</label>
+            <div class="color-palette">
+              <div class="color-option selected" data-color="#38bdf8" style="background:#38bdf8;"></div>
+              <div class="color-option" data-color="#2563eb" style="background:#2563eb;"></div>
+              <div class="color-option" data-color="#f43f5e" style="background:#f43f5e;"></div>
+              <div class="color-option" data-color="#10b981" style="background:#10b981;"></div>
+              <div class="color-option" data-color="#f59e0b" style="background:#f59e0b;"></div>
+              <div class="color-option" data-color="#8b5cf6" style="background:#8b5cf6;"></div>
+              <div class="color-option" data-color="#f97316" style="background:#f97316;"></div>
+              <div class="color-option" data-color="#ec4899" style="background:#ec4899;"></div>
+            </div>
+          </div>
+          <div>
+            <label class="form-label" style="margin-bottom: 0.15rem;" for="landing-hat-select">AKSESORI</label>
+            <select id="landing-hat-select" class="form-select">
+              <option value="none">Tanpa Topi</option>
+              <option value="topi_sekolah">Topi Sekolah</option>
+              <option value="mahkota">Mahkota Emas</option>
+              <option value="topi_wisuda">Topi Toga</option>
+              <option value="telinga_kucing">Telinga Kucing</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="menu-inline-feedback" class="menu-inline-feedback" role="alert"></div>
+
+        <button type="submit" id="btn-enter-city-submit" class="btn btn-primary btn-block" style="font-size: 0.94rem; min-height: 46px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          <span id="btn-enter-city-label">Masuk Private Server</span>
+        </button>
+      </form>
+    </main>
+
+    <footer class="landing-footer">
+      <span id="landing-footer-hint">Private Server terisolasi penuh untuk tes fitur atau main bersama Bot AI.</span>
+    </footer>
+  </div>
+
+  <!-- ==================== 2. HUD DI DALAM LOBBY KOTA 3D ==================== -->
+  <div id="city-hud">
+    <!-- Pengumuman Panggilan Guru -->
+    <div id="teacher-announcement-bar" class="hud-pointer">
+      <span id="announcement-text">Pengumuman Guru</span>
+      <button id="btn-announcement-go" class="btn btn-primary" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.8rem;">
+        Menuju Gedung
+      </button>
+    </div>
+
+    <!-- Kiri Atas: Kartu Status + Minimap Radar Kota -->
+    <div class="city-top-left hud-pointer">
+      <div class="city-status-card">
+        <div class="status-header">
+          <strong id="hud-player-name" style="font-size: 0.94rem;">Pemain</strong>
+          <span id="hud-role-pill" class="role-pill role-student">Siswa</span>
+        </div>
+        <div class="status-meta">
+          <div id="hud-district-label">Alun-Alun Menara EduMetro</div>
+          <div>Online: <strong id="hud-online-count" style="color:#38bdf8;">1</strong> · Gedung Aktif: <strong id="hud-ready-count" style="color:#10b981;">11 / 11</strong></div>
+        </div>
+      </div>
+
+      <!-- Bar Info Server Aktif (Tampil di PC & HP: Kode Server Kelas / Toggle Bot Private Server) -->
+      <div id="hud-server-bar" class="hud-server-bar is-solo">
+        <span id="hud-server-tag" class="hud-server-tag">PRIVATE</span>
+        <span id="hud-server-code-val" class="hud-server-code-val">SOLO</span>
+        <button id="btn-hud-toggle-bots" class="hud-server-mini-btn" style="display: none;" title="Aktifkan atau matikan Bot AI">
+          <span>Bot: OFF</span>
+        </button>
+        <button id="btn-hud-copy-code" class="hud-server-mini-btn" style="display: none;" title="Salin Kode Server">
+          <span>Salin</span>
+        </button>
+        <button id="btn-hud-open-server-modal" class="hud-server-mini-btn" style="display: none;" title="Tampilkan Layar Kode Server">
+          <span>Kode</span>
+        </button>
+      </div>
+
+      <div class="minimap-wrap" title="Peta Radar Kota EduMetro">
+        <canvas id="city-minimap" width="146" height="146"></canvas>
+        <span class="minimap-north">U</span>
+      </div>
+    </div>
+
+    <!-- Kanan Atas: TOMBOL MENU PERMANEN + HAMBURGER + REAKSI -->
+    <div class="city-top-right hud-pointer">
+      <div class="city-top-right-controls">
+        <!-- Tombol Langsung Kembali ke Tampilan Menu Awal (Selalu Terlihat di HP & PC!) -->
+        <button id="btn-hud-menu-direct" class="hud-menu-pill" title="Kembali ke Menu Utama">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Menu</span>
+        </button>
+
+        <div class="hamburger-wrap">
+          <button id="btn-city-hamburger" class="emote-fab-btn" aria-label="Menu Kota" title="Menu Kota">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+          <div id="city-hamburger-menu" class="hamburger-dropdown">
+            <button id="btn-hud-teacher-dash" class="hud-mini-btn teacher-btn" style="display: none; width: 100%; justify-content: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Dashboard Guru</span>
+            </button>
+            <button id="btn-hud-directory" class="hud-mini-btn" style="width: 100%; justify-content: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+              <span>11 Gedung</span>
+            </button>
+            <button id="btn-hud-settings" class="hud-mini-btn" style="width: 100%; justify-content: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Pengaturan</span>
+            </button>
+            <button id="btn-hud-menu" class="hud-mini-btn" style="width: 100%; justify-content: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+              <span>Kembali ke Menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol Reaksi Vektor di Bawah Baris Menu (Zero Emoji) -->
+      <div class="emote-dropdown-wrap">
+        <button id="btn-city-emote-toggle" class="emote-fab-btn" aria-label="Reaksi Cepat" title="Reaksi Cepat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+        </button>
+        <div id="city-emote-menu" class="emote-dropdown-menu" style="padding: 0.35rem; gap: 0.3rem;">
+          <button class="reaction-pill-btn city-emote-btn" data-emote="👋" title="Sapa">👋</button>
+          <button class="reaction-pill-btn city-emote-btn" data-emote="👏" title="Mantap">👏</button>
+          <button class="reaction-pill-btn city-emote-btn" data-emote="🔥" title="Semangat">🔥</button>
+          <button class="reaction-pill-btn city-emote-btn" data-emote="👍" title="Siap">👍</button>
+          <button class="reaction-pill-btn city-emote-btn" data-emote="🏆" title="Juara">🏆</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt Interaksi Pintu Gedung -->
+    <div id="building-prompt" class="hud-pointer">
+      <span class="prompt-key">E</span>
+      <div>
+        <div id="prompt-building-title" style="font-weight: 800; font-size: 0.96rem; color: #fff;">Gedung</div>
+        <div id="prompt-building-sub" style="font-size: 0.78rem; color: #7dd3fc;">Masuk ke gedung ini</div>
+      </div>
+      <button id="btn-prompt-enter" class="btn btn-primary" style="min-height: 38px; padding: 0.45rem 0.9rem; font-size: 0.84rem;">
+        Masuk
+      </button>
+    </div>
+
+    <!-- Bar Sirkuit Balap Free-Drive & Tombol Start Balapan (Zero Emoji) -->
+    <div id="circuit-hud-bar" class="hud-pointer" style="display: none; position: fixed; top: max(0.85rem, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); z-index: 48; align-items: center; gap: 0.45rem; flex-wrap: wrap; justify-content: center; max-width: calc(100vw - 12.5rem);">
+      <div id="circuit-speed-pill" style="display: none; background: rgba(11, 17, 32, 0.92); border: 1.5px solid #38bdf8; color: #fde047; padding: 0.38rem 0.8rem; border-radius: 999px; font-weight: 800; font-size: 0.8rem; white-space: nowrap; box-shadow: 0 6px 18px rgba(0,0,0,0.4);">
+        <span id="circuit-speed-val">0</span> KM/J
+      </div>
+      <button id="btn-car-toggle" class="btn btn-primary" style="display: none; min-height: 38px; padding: 0.4rem 0.85rem; border-radius: 999px; font-size: 0.8rem; white-space: nowrap;">
+        Naik Mobil
+      </button>
+      <button id="btn-circuit-start-race" class="btn btn-success" style="display: none; min-height: 38px; padding: 0.4rem 0.92rem; border-radius: 999px; font-size: 0.82rem; font-weight: 800; white-space: nowrap;">
+        Mulai Balapan
+      </button>
+    </div>
+
+    <!-- Bawah Kiri: Chat Kelas (Desktop & Laci Mobile) -->
+    <div class="city-bottom-left hud-pointer">
+      <div class="city-chat-box">
+        <div id="city-chat-messages" class="city-chat-messages">
+          <div class="chat-line" style="color: #94a3b8;">Selamat datang di EduMetro 3D. Kunjungi 11 gedung untuk bermain bersama kelas.</div>
+        </div>
+        <form id="city-chat-form" class="city-chat-form">
+          <input type="text" id="city-chat-input" class="city-chat-input" placeholder="Ketik pesan ke satu kelas..." maxlength="100" autocomplete="off">
+          <button type="submit" class="btn btn-primary" style="min-height: 36px; padding: 0.35rem 0.7rem; font-size: 0.78rem;">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bawah Kanan: Hint Kontrol PC -->
+    <div class="city-controls-hint">
+      <strong>WASD / Panah</strong> Jalan · <strong>Spasi</strong> Lompat · <strong>E</strong> Masuk Gedung · <strong>F</strong> Mobil · <strong>Drag</strong> Kamera
+    </div>
+  </div>
+
+  <!-- Mobile Virtual Joystick & Jump Button (Zero Emoji — Crisp Vector Arrow) -->
+  <div class="mobile-controls" style="display: none;">
+    <div id="mobile-joystick-zone">
+      <div id="mobile-joystick-knob"></div>
+    </div>
+    <div id="mobile-jump-btn" role="button" aria-label="Lompat">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+      <span>LOMPAT</span>
+    </div>
+  </div>
+
+  <!-- ==================== 3. MODAL PENGATURAN & LOGIN AKUN GURU ==================== -->
+  <div id="settings-modal" class="city-modal-backdrop">
+    <div class="city-modal">
+      <div class="modal-header">
+        <h3 style="font-size: 1.18rem; font-family: var(--font-display);">Pengaturan Game</h3>
+        <button id="btn-close-settings" class="modal-close-btn" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="setting-quality">Kualitas Grafis 3D</label>
+        <select id="setting-quality" class="form-select">
+          <option value="low">Ringan (Terbaik untuk HP RAM Kecil / 60 FPS)</option>
+          <option value="medium" selected>Seimbang (Rekomendasi Default)</option>
+          <option value="high">Tinggi (Bayangan & Pantulan Maksimal)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Efek Suara & Audio</label>
+        <button id="setting-sound-toggle" class="btn btn-secondary btn-block">Suara: Aktif</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4. MODAL DIREKTORI 11 GEDUNG MINI GAMES ==================== -->
+  <div id="directory-modal" class="city-modal-backdrop">
+    <div class="city-modal wide">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.18rem; font-family: var(--font-display);">Peta & Daftar 11 Gedung Mini Games</h3>
+          <p style="font-size: 0.8rem; color: #94a3b8;">Pilih gedung untuk langsung teleport ke depan pintu atau area sirkuit.</p>
+        </div>
+        <button id="btn-close-directory" class="modal-close-btn" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+        <button class="btn btn-primary dir-filter-btn" data-district="all" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.78rem;">Semua (11)</button>
+        <button class="btn btn-secondary dir-filter-btn" data-district="sains" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.78rem;">Sains (3)</button>
+        <button class="btn btn-secondary dir-filter-btn" data-district="matematika" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.78rem;">Matematika (3)</button>
+        <button class="btn btn-secondary dir-filter-btn" data-district="bahasa" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.78rem;">Bahasa (3)</button>
+        <button class="btn btn-secondary dir-filter-btn" data-district="kreatif" style="min-height: 36px; padding: 0.35rem 0.75rem; font-size: 0.78rem;">Kreatif (2)</button>
+      </div>
+
+      <div id="directory-games-grid" class="games-grid"></div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. MODAL PORTAL MASUK GEDUNG MINI GAME ==================== -->
+  <div id="building-gate-modal" class="city-modal-backdrop">
+    <div class="city-modal">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span id="gate-icon" style="width: 44px; height: 44px; border-radius: 12px; background: rgba(37,99,235,0.2); color: #60a5fa; display: inline-flex; align-items: center; justify-content: center;"></span>
+          <div>
+            <h3 id="gate-title" style="font-size: 1.15rem; font-family: var(--font-display);">Gedung Mini Game</h3>
+            <div id="gate-subject" style="font-size: 0.78rem; color: #38bdf8; font-weight: 700;">Distrik · Mapel</div>
+          </div>
+        </div>
+        <button id="btn-close-gate" class="modal-close-btn" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <p id="gate-desc" style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1.1rem;"></p>
+
+      <div id="gate-ready-actions" style="display: none;">
+        <button id="btn-gate-join-student" class="btn btn-primary btn-block" style="margin-bottom: 0.7rem; font-size: 0.98rem; min-height: 48px;">
+          Masuk &amp; Mainkan Sekarang
+        </button>
+        <p id="gate-server-scope-note" style="font-size: 0.78rem; color: #94a3b8; text-align: center; margin-bottom: 0.5rem;">
+          Terhubung otomatis ke ruang mini game milik server aktif Anda.
+        </p>
+      </div>
+
+      <div id="gate-coming-soon" style="display: none; background: rgba(56,189,248,0.08); border: 1px dashed rgba(56,189,248,0.4); border-radius: 14px; padding: 1rem; text-align: center; margin-bottom: 1rem;">
+        <strong style="color: #7dd3fc;">Slot Gedung Tahap Berikutnya</strong>
+        <p style="font-size: 0.84rem; color: #cbd5e1; margin-top: 0.3rem;">
+          Gedung & portal sudah terpasang di Kota EduMetro 3D dan siap diisi mini game berikutnya.
+        </p>
+      </div>
+
+      <div id="gate-teacher-extra" style="display: none; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.9rem; margin-top: 0.5rem;">
+        <div style="font-size: 0.76rem; font-weight: 800; color: #f59e0b; letter-spacing: 0.06em; margin-bottom: 0.55rem;">KONTROL AKUN GURU</div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <button id="btn-gate-open-teacher" class="btn btn-accent btn-block">Edit Soal Mini Game</button>
+          <button id="btn-teacher-call-class" class="btn btn-secondary btn-block" style="border-color: rgba(245,158,11,0.45); color: #fde68a;">
+            Panggil Semua Siswa ke Gedung Ini
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 6. MODAL KODE SERVER KELAS (GURU / HOST ALA KAHOOT) ==================== -->
+  <div id="server-code-modal" class="city-modal-backdrop">
+    <div class="city-modal">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-server-title" style="font-size: 1.15rem; font-family: var(--font-display);">Server Kelas Aktif</h3>
+          <div id="modal-server-sub" style="font-size: 0.78rem; color: #94a3b8;">Bagikan kode 6 digit ini kepada murid untuk bergabung.</div>
+        </div>
+        <button id="btn-close-server-modal" class="modal-close-btn" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="server-projector-box">
+        <div style="font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; color: #cbd5e1; text-transform: uppercase;">
+          KODE SERVER KELAS (MULTIPLAYER)
+        </div>
+        <div id="modal-server-code-display" class="server-projector-code">000 000</div>
+        <div style="font-size: 0.78rem; color: #94a3b8;">
+          Murid memilih <strong>Multiplayer &gt; Murid</strong> lalu memasukkan kode di atas.
+        </div>
+        <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.85rem;">
+          <button id="btn-modal-copy-code" class="btn btn-primary" style="min-height: 38px; padding: 0.4rem 0.9rem; font-size: 0.82rem;">
+            Salin Kode Server
+          </button>
+          <button id="btn-modal-toggle-lock" class="btn btn-secondary" style="min-height: 38px; padding: 0.4rem 0.9rem; font-size: 0.82rem;">
+            Kunci Server
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+        <span style="font-size: 0.78rem; font-weight: 800; color: #cbd5e1; letter-spacing: 0.05em;">PESERTA DI LOBI KOTA</span>
+        <span id="modal-server-player-count" style="font-size: 0.8rem; font-weight: 800; color: #38bdf8;">1 Online</span>
+      </div>
+      <div id="modal-server-roster" class="server-roster-list"></div>
+
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button id="btn-modal-enter-city" class="btn btn-success" style="flex: 1; min-height: 44px;">
+          Lanjut ke Lobi Kota
+        </button>
+        <button id="btn-modal-close-server" class="btn btn-secondary" style="border-color: rgba(244,63,94,0.5); color: #fda4af; min-height: 44px;">
+          Tutup Server
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/materials-pbr.js"></script>
+  <script src="js/physics3d.js"></script>
+  <script src="js/minigames-registry.js"></script>
+  <script src="js/avatar3d.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/mobile-controls.js"></script>
+  <script src="js/city-circuit.js"></script>
+  <script src="js/city3d.js"></script>
+  <script src="js/city-main.js"></script>
+</body>
+</html>

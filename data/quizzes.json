@@ -1,0 +1,3059 @@
+{
+  "mg-01": {
+    "id": "mg-01",
+    "title": "Stadium Kuis Lari 3D",
+    "subject": "Matematika & Pengetahuan Umum",
+    "grade": "SD & SMP",
+    "description": "Berlari cepat ke zona jawaban A, B, C, atau D sebelum timer habis!",
+    "questions": [
+      {
+        "q": "Hasil dari 14 + 8 adalah...",
+        "question": "Hasil dari 14 + 8 adalah...",
+        "options": [
+          "20",
+          "22",
+          "21",
+          "24"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Penjumlahan bilangan cacah: 14 + 8 = 22."
+      },
+      {
+        "q": "Hasil dari 6 x 5 adalah...",
+        "question": "Hasil dari 6 x 5 adalah...",
+        "options": [
+          "25",
+          "30",
+          "35",
+          "40"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Perkalian dasar: 6 dikali 5 sama dengan 30."
+      },
+      {
+        "q": "Hasil dari operasi hitung 25 + 15 x 2 adalah...",
+        "question": "Hasil dari operasi hitung 25 + 15 x 2 adalah...",
+        "options": [
+          "80",
+          "55",
+          "65",
+          "50"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Perkalian dikerjakan terlebih dahulu: 15 x 2 = 30 lalu 25 + 30 = 55."
+      },
+      {
+        "q": "Siti belajar mulai pukul 15.30 dan selesai pukul 17.15. Lama Siti belajar adalah...",
+        "question": "Siti belajar mulai pukul 15.30 dan selesai pukul 17.15. Lama Siti belajar adalah...",
+        "options": [
+          "1 jam 45 menit",
+          "1 jam 30 menit",
+          "1 jam 15 menit",
+          "2 jam 15 menit"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Selisih waktu dari pukul 15.30 ke 17.15 adalah 1 jam 45 menit."
+      },
+      {
+        "q": "Hasil penjumlahan pecahan 2/3 + 1/6 adalah...",
+        "question": "Hasil penjumlahan pecahan 2/3 + 1/6 adalah...",
+        "options": [
+          "5/6",
+          "3/6",
+          "3/9",
+          "4/6"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Samakan penyebut menjadi 6: 4/6 + 1/6 = 5/6."
+      },
+      {
+        "q": "Keliling persegi panjang dengan panjang 18 cm dan lebar 12 cm adalah...",
+        "question": "Keliling persegi panjang dengan panjang 18 cm dan lebar 12 cm adalah...",
+        "options": [
+          "30 cm",
+          "216 cm",
+          "108 cm",
+          "60 cm"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Rumus keliling persegi panjang adalah 2 x (18 + 12) = 60 cm."
+      },
+      {
+        "q": "Kelipatan Persekutuan Terkecil (KPK) dari 12 dan 18 adalah...",
+        "question": "Kelipatan Persekutuan Terkecil (KPK) dari 12 dan 18 adalah...",
+        "options": [
+          "24",
+          "48",
+          "36",
+          "72"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Kelipatan 12 adalah 12 24 36 dan kelipatan 18 adalah 18 36 sehingga KPK-nya 36."
+      },
+      {
+        "q": "Volume balok berukuran panjang 10 cm lebar 6 cm dan tinggi 5 cm adalah...",
+        "question": "Volume balok berukuran panjang 10 cm lebar 6 cm dan tinggi 5 cm adalah...",
+        "options": [
+          "300 cm3",
+          "150 cm3",
+          "21 cm3",
+          "600 cm3"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Volume balok dihitung dengan panjang x lebar x tinggi yaitu 10 x 6 x 5 = 300 cm3."
+      },
+      {
+        "q": "Luas lingkaran yang memiliki jari-jari 14 cm adalah...",
+        "question": "Luas lingkaran yang memiliki jari-jari 14 cm adalah...",
+        "options": [
+          "88 cm2",
+          "154 cm2",
+          "616 cm2",
+          "308 cm2"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 30,
+        "points": 100,
+        "explanation": "Luas lingkaran = 22/7 x 14 x 14 = 616 cm2."
+      },
+      {
+        "q": "Jarak dua kota pada peta berskala 1 : 2.000.000 adalah 6 cm. Jarak sebenarnya kedua kota tersebut adalah...",
+        "question": "Jarak dua kota pada peta berskala 1 : 2.000.000 adalah 6 cm. Jarak sebenarnya kedua kota tersebut adalah...",
+        "options": [
+          "12 km",
+          "120 km",
+          "60 km",
+          "1.200 km"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 30,
+        "points": 100,
+        "explanation": "Jarak sebenarnya = 6 cm x 2.000.000 = 12.000.000 cm = 120 km."
+      },
+      {
+        "q": "Planet terbesar di dalam tata surya adalah...",
+        "question": "Planet terbesar di dalam tata surya adalah...",
+        "options": [
+          "Mars",
+          "Saturnus",
+          "Jupiter",
+          "Bumi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Jupiter adalah planet terbesar dengan diameter 11 kali Bumi."
+      },
+      {
+        "q": "Bagian tumbuhan yang bertugas utama melakukan fotosintesis adalah...",
+        "question": "Bagian tumbuhan yang bertugas utama melakukan fotosintesis adalah...",
+        "options": [
+          "Akar",
+          "Daun",
+          "Batang",
+          "Bunga"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Daun mengandung zat klorofil yang menyerap cahaya matahari."
+      },
+      {
+        "q": "Gaya yang menyebabkan benda jatuh ke bawah menuju bumi adalah gaya...",
+        "question": "Gaya yang menyebabkan benda jatuh ke bawah menuju bumi adalah gaya...",
+        "options": [
+          "Gravitasi",
+          "Gesek",
+          "Pegas",
+          "Magnet"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Gaya gravitasi menarik semua benda bermassa ke pusat bumi."
+      },
+      {
+        "q": "Bagian tubuh ikan yang berfungsi untuk berenang dan menjaga keseimbangan di air adalah...",
+        "question": "Bagian tubuh ikan yang berfungsi untuk berenang dan menjaga keseimbangan di air adalah...",
+        "options": [
+          "Sirip dan ekor",
+          "Insang",
+          "Sisik",
+          "Sungut"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Sirip dan ekor membantu ikan bergerak dan berbelok di dalam air."
+      },
+      {
+        "q": "Urutan metamorfosis sempurna pada kupu-kupu yang benar adalah...",
+        "question": "Urutan metamorfosis sempurna pada kupu-kupu yang benar adalah...",
+        "options": [
+          "Telur - Nimfa - Kupu-kupu",
+          "Telur - Kepompong - Ulat - Kupu-kupu",
+          "Ulat - Telur - Kepompong - Kupu-kupu",
+          "Telur - Ulat - Kepompong - Kupu-kupu"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Kupu-kupu mengalami fase telur lalu larva (ulat) lalu pupa (kepompong) dan menjadi kupu-kupu."
+      },
+      {
+        "q": "Perubahan wujud benda padat langsung menjadi gas seperti pada kapur barus disebut...",
+        "question": "Perubahan wujud benda padat langsung menjadi gas seperti pada kapur barus disebut...",
+        "options": [
+          "Mencair",
+          "Menguap",
+          "Mengembun",
+          "Menyublim"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Menyublim adalah peristiwa perubahan wujud zat padat menjadi gas."
+      },
+      {
+        "q": "Organ pencernaan manusia yang berfungsi menyerap sari-sari makanan adalah...",
+        "question": "Organ pencernaan manusia yang berfungsi menyerap sari-sari makanan adalah...",
+        "options": [
+          "Usus halus",
+          "Lambung",
+          "Usus besar",
+          "Kerongkongan"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Usus halus mencerna makanan secara kimiawi dan menyerap sari makanan ke darah."
+      },
+      {
+        "q": "Pada rantai makanan padi dimakan tikus dan tikus dimakan ular maka ular berperan sebagai...",
+        "question": "Pada rantai makanan padi dimakan tikus dan tikus dimakan ular maka ular berperan sebagai...",
+        "options": [
+          "Produsen",
+          "Konsumen tingkat II",
+          "Konsumen tingkat I",
+          "Pengurai"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Padi adalah produsen lalu tikus konsumen tingkat I dan ular adalah konsumen tingkat II."
+      },
+      {
+        "q": "Perpindahan panas melalui zat perantara logam tanpa disertai perpindahan partikelnya disebut...",
+        "question": "Perpindahan panas melalui zat perantara logam tanpa disertai perpindahan partikelnya disebut...",
+        "options": [
+          "Radiasi",
+          "Konveksi",
+          "Konduksi",
+          "Isolasi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Konduksi merupakan perpindahan kalor melalui penghantar padat seperti logam."
+      },
+      {
+        "q": "Tumbuhan bawang merah berkembang biak secara vegetatif alami menggunakan...",
+        "question": "Tumbuhan bawang merah berkembang biak secara vegetatif alami menggunakan...",
+        "options": [
+          "Umbi lapis",
+          "Umbi batang",
+          "Tunas adventif",
+          "Geragih"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Bawang merah memiliki susunan daun berlapis yang membentuk umbi lapis."
+      },
+      {
+        "q": "Antonim atau lawan kata dari hemat adalah...",
+        "question": "Antonim atau lawan kata dari hemat adalah...",
+        "options": [
+          "Irit",
+          "Cermat",
+          "Rajin",
+          "Boros"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Lawan kata dari hemat adalah boros sedangkan irit merupakan sinonimnya."
+      },
+      {
+        "q": "Penulisan kata baku yang tepat sesuai Kamus Besar Bahasa Indonesia adalah...",
+        "question": "Penulisan kata baku yang tepat sesuai Kamus Besar Bahasa Indonesia adalah...",
+        "options": [
+          "Apotik",
+          "Apotek",
+          "Apoteker",
+          "Apotikh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Bentuk kata baku yang terdaftar dalam KBBI adalah apotek."
+      },
+      {
+        "q": "Penulisan huruf kapital yang benar pada kalimat berikut adalah...",
+        "question": "Penulisan huruf kapital yang benar pada kalimat berikut adalah...",
+        "options": [
+          "ani pergi ke kota bogor.",
+          "Ani pergi ke kota Bogor.",
+          "Ani pergi ke Kota Bogor.",
+          "ani pergi ke Kota bogor."
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Huruf kapital dipakai di awal kalimat serta pada nama orang dan nama geografi."
+      },
+      {
+        "q": "Gagasan utama yang menjadi dasar pengembangan sebuah paragraf disebut...",
+        "question": "Gagasan utama yang menjadi dasar pengembangan sebuah paragraf disebut...",
+        "options": [
+          "Kalimat penjelas",
+          "Ringkasan",
+          "Kata kunci",
+          "Ide pokok"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Ide pokok merupakan inti pembahasan utama dalam suatu paragraf."
+      },
+      {
+        "q": "Angin malam berbisik lembut menyapa dedaunan. Kalimat tersebut menggunakan majas...",
+        "question": "Angin malam berbisik lembut menyapa dedaunan. Kalimat tersebut menggunakan majas...",
+        "options": [
+          "Hiperbola",
+          "Simile",
+          "Metafora",
+          "Personifikasi"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Majas personifikasi memberikan sifat manusia kepada benda mati seperti angin."
+      },
+      {
+        "q": "Sajak akhir pada baris-baris pantun yang benar berpola...",
+        "question": "Sajak akhir pada baris-baris pantun yang benar berpola...",
+        "options": [
+          "a-a-a-a",
+          "a-a-b-b",
+          "a-b-a-b",
+          "a-b-b-a"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Pantun memiliki rima silang yaitu baris pertama sama dengan ketiga dan kedua sama dengan keempat."
+      },
+      {
+        "q": "Bagian teks eksplanasi yang berisi urutan sebab-akibat terjadinya suatu fenomena adalah...",
+        "question": "Bagian teks eksplanasi yang berisi urutan sebab-akibat terjadinya suatu fenomena adalah...",
+        "options": [
+          "Pernyataan umum",
+          "Interpretasi",
+          "Deretan penjelas",
+          "Orientasi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Deretan penjelas memaparkan proses dan hubungan sebab-akibat suatu peristiwa."
+      },
+      {
+        "q": "Kalimat di bawah ini yang termasuk kalimat intransitif tanpa objek adalah...",
+        "question": "Kalimat di bawah ini yang termasuk kalimat intransitif tanpa objek adalah...",
+        "options": [
+          "Ibu memasak sayur bayam.",
+          "Adik tertidur pulas di kamar.",
+          "Kakak membaca buku cerita.",
+          "Ayah mencuci sepeda motor."
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Kata kerja tertidur tidak memerlukan objek sehingga membentuk kalimat intransitif."
+      },
+      {
+        "q": "Ungkapan buah tangan memiliki arti...",
+        "question": "Ungkapan buah tangan memiliki arti...",
+        "options": [
+          "Hasil karya",
+          "Oleh-oleh",
+          "Anak kesayangan",
+          "Pekerjaan berat"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Idiom buah tangan bermakna barang bawaan atau oleh-oleh."
+      },
+      {
+        "q": "Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya peristiwa adalah...",
+        "question": "Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya peristiwa adalah...",
+        "options": [
+          "Kapan",
+          "Di mana",
+          "Siapa",
+          "Mengapa"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Kata tanya mengapa berfungsi menanyakan sebab atau alasan suatu kejadian."
+      },
+      {
+        "q": "The color of a ripe banana is...",
+        "question": "The color of a ripe banana is...",
+        "options": [
+          "Blue",
+          "Black",
+          "Purple",
+          "Yellow"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Pisang yang sudah matang berwarna kuning atau yellow dalam bahasa Inggris."
+      },
+      {
+        "q": "Today is Wednesday. Tomorrow will be...",
+        "question": "Today is Wednesday. Tomorrow will be...",
+        "options": [
+          "Tuesday",
+          "Friday",
+          "Thursday",
+          "Monday"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Setelah hari Rabu (Wednesday) adalah hari Kamis (Thursday)."
+      },
+      {
+        "q": "It is 07.30 in the morning. In English we say half past...",
+        "question": "It is 07.30 in the morning. In English we say half past...",
+        "options": [
+          "Six",
+          "Eight",
+          "Seven",
+          "Nine"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Pukul 07.30 berarti lewat tiga puluh menit dari pukul tujuh atau half past seven."
+      },
+      {
+        "q": "Siti always ... her teeth before going to bed.",
+        "question": "Siti always ... her teeth before going to bed.",
+        "options": [
+          "brush",
+          "brushed",
+          "brushing",
+          "brushes"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Subjek orang ketiga tunggal Siti menggunakan kata kerja berakhiran -es pada Simple Present."
+      },
+      {
+        "q": "Budi ate too many candies yesterday. Now he has a...",
+        "question": "Budi ate too many candies yesterday. Now he has a...",
+        "options": [
+          "headache",
+          "toothache",
+          "earache",
+          "backache"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Makan terlalu banyak permen menyebabkan sakit gigi atau toothache."
+      },
+      {
+        "q": "An elephant is ... than a rabbit.",
+        "question": "An elephant is ... than a rabbit.",
+        "options": [
+          "smaller",
+          "thinner",
+          "shorter",
+          "bigger"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Gajah lebih besar daripada kelinci sehingga menggunakan bentuk comparative bigger."
+      },
+      {
+        "q": "Where do you go if you want to borrow and read many books?",
+        "question": "Where do you go if you want to borrow and read many books?",
+        "options": [
+          "Hospital",
+          "Market",
+          "Post office",
+          "Library"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Tempat untuk meminjam dan membaca buku adalah perpustakaan atau library."
+      },
+      {
+        "q": "My family and I ... to Yogyakarta by train last holiday.",
+        "question": "My family and I ... to Yogyakarta by train last holiday.",
+        "options": [
+          "went",
+          "goes",
+          "go",
+          "going"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Keterangan waktu last holiday menandakan masa lampau sehingga memakai verb 2 went."
+      },
+      {
+        "q": "The opposite of the word cold is...",
+        "question": "The opposite of the word cold is...",
+        "options": [
+          "Wet",
+          "Soft",
+          "Hot",
+          "Dark"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Lawan kata dari dingin (cold) adalah panas (hot)."
+      },
+      {
+        "q": "How many days are there in a week?",
+        "question": "How many days are there in a week?",
+        "options": [
+          "Five",
+          "Six",
+          "Seven",
+          "Eight"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Dalam satu minggu terdapat tujuh hari atau seven days."
+      },
+      {
+        "q": "Siapakah Bapak Pendidikan Nasional Indonesia?",
+        "question": "Siapakah Bapak Pendidikan Nasional Indonesia?",
+        "options": [
+          "Ki Hajar Dewantara",
+          "Ir. Soekarno",
+          "Mohammad Hatta",
+          "Jenderal Soedirman"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Ki Hajar Dewantara mendirikan Taman Siswa dengan semboyan Tut Wuri Handayani."
+      },
+      {
+        "q": "Simbol sila keempat Pancasila pada perisai burung Garuda adalah...",
+        "question": "Simbol sila keempat Pancasila pada perisai burung Garuda adalah...",
+        "options": [
+          "Pohon beringin",
+          "Rantai emas",
+          "Kepala banteng",
+          "Padi dan kapas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Kepala banteng melambangkan sila keempat Pancasila tentang musyawarah."
+      },
+      {
+        "q": "Rumah adat Tongkonan berasal dari provinsi...",
+        "question": "Rumah adat Tongkonan berasal dari provinsi...",
+        "options": [
+          "Sulawesi Selatan",
+          "Sumatera Barat",
+          "Kalimantan Timur",
+          "Papua"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Tongkonan merupakan rumah adat tradisional masyarakat Toraja di Sulawesi Selatan."
+      },
+      {
+        "q": "Kegiatan menyalurkan barang hasil produksi dari produsen ke konsumen disebut...",
+        "question": "Kegiatan menyalurkan barang hasil produksi dari produsen ke konsumen disebut...",
+        "options": [
+          "Distribusi",
+          "Produksi",
+          "Konsumsi",
+          "Investasi"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Distribusi adalah kegiatan ekonomi yang menyalurkan barang hingga sampai ke konsumen."
+      },
+      {
+        "q": "Indonesia dijuluki sebagai negara maritim karena...",
+        "question": "Indonesia dijuluki sebagai negara maritim karena...",
+        "options": [
+          "Sebagian besar penduduknya bertani",
+          "Wilayah perairan lautnya lebih luas dari daratan",
+          "Memiliki banyak gunung berapi",
+          "Berada di daerah kutub"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Negara maritim memiliki wilayah laut yang luas dan memanfaatkan potensi kelautan."
+      },
+      {
+        "q": "Peristiwa Rengasdengklok pada 16 Agustus 1945 bertujuan agar Soekarno-Hatta segera...",
+        "question": "Peristiwa Rengasdengklok pada 16 Agustus 1945 bertujuan agar Soekarno-Hatta segera...",
+        "options": [
+          "Menyusun kabinet",
+          "Memproklamasikan kemerdekaan Indonesia",
+          "Membentuk tentara",
+          "Menyerah kepada Sekutu"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Golongan muda mengamankan Soekarno-Hatta agar proklamasi segera dilaksanakan tanpa pengaruh Jepang."
+      },
+      {
+        "q": "Negara pendiri ASEAN di kawasan Asia Tenggara yang tidak pernah dijajah bangsa Eropa adalah...",
+        "question": "Negara pendiri ASEAN di kawasan Asia Tenggara yang tidak pernah dijajah bangsa Eropa adalah...",
+        "options": [
+          "Indonesia",
+          "Thailand",
+          "Malaysia",
+          "Filipina"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Thailand adalah satu-satunya negara di Asia Tenggara yang tidak pernah dijajah negara Barat."
+      },
+      {
+        "q": "Hari Sumpah Pemuda diperingati oleh bangsa Indonesia setiap tanggal...",
+        "question": "Hari Sumpah Pemuda diperingati oleh bangsa Indonesia setiap tanggal...",
+        "options": [
+          "28 Oktober",
+          "20 Mei",
+          "17 Agustus",
+          "10 November"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Ikrar Sumpah Pemuda dibacakan pada Kongres Pemuda II tanggal 28 Oktober 1928."
+      },
+      {
+        "q": "Semboyan Bhinneka Tunggal Ika memiliki arti...",
+        "question": "Semboyan Bhinneka Tunggal Ika memiliki arti...",
+        "options": [
+          "Berbeda-beda tetapi tetap satu jua",
+          "Bersatu kita teguh",
+          "Maju terus pantang mundur",
+          "Keadilan bagi seluruh rakyat"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Bhinneka Tunggal Ika bermakna meskipun berbeda suku dan budaya bangsa Indonesia tetap satu."
+      },
+      {
+        "q": "Sikap yang mencerminkan pengamalan sila ketiga Pancasila di sekolah adalah...",
+        "question": "Sikap yang mencerminkan pengamalan sila ketiga Pancasila di sekolah adalah...",
+        "options": [
+          "Mencontek saat ulangan",
+          "Membuang sampah sembarangan",
+          "Memilih teman satu daerah saja",
+          "Bekerja sama melaksanakan piket kelas"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Gotong royong dan kerja sama tanpa membeda-bedakan memperkuat persatuan di sekolah."
+      }
+    ],
+    "questionsSD": [
+      {
+        "q": "Hasil dari 14 + 8 adalah...",
+        "question": "Hasil dari 14 + 8 adalah...",
+        "options": [
+          "20",
+          "22",
+          "21",
+          "24"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Penjumlahan bilangan cacah: 14 + 8 = 22."
+      },
+      {
+        "q": "Hasil dari 6 x 5 adalah...",
+        "question": "Hasil dari 6 x 5 adalah...",
+        "options": [
+          "25",
+          "30",
+          "35",
+          "40"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Perkalian dasar: 6 dikali 5 sama dengan 30."
+      },
+      {
+        "q": "Hasil dari operasi hitung 25 + 15 x 2 adalah...",
+        "question": "Hasil dari operasi hitung 25 + 15 x 2 adalah...",
+        "options": [
+          "80",
+          "55",
+          "65",
+          "50"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Perkalian dikerjakan terlebih dahulu: 15 x 2 = 30 lalu 25 + 30 = 55."
+      },
+      {
+        "q": "Siti belajar mulai pukul 15.30 dan selesai pukul 17.15. Lama Siti belajar adalah...",
+        "question": "Siti belajar mulai pukul 15.30 dan selesai pukul 17.15. Lama Siti belajar adalah...",
+        "options": [
+          "1 jam 45 menit",
+          "1 jam 30 menit",
+          "1 jam 15 menit",
+          "2 jam 15 menit"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Selisih waktu dari pukul 15.30 ke 17.15 adalah 1 jam 45 menit."
+      },
+      {
+        "q": "Hasil penjumlahan pecahan 2/3 + 1/6 adalah...",
+        "question": "Hasil penjumlahan pecahan 2/3 + 1/6 adalah...",
+        "options": [
+          "5/6",
+          "3/6",
+          "3/9",
+          "4/6"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Samakan penyebut menjadi 6: 4/6 + 1/6 = 5/6."
+      },
+      {
+        "q": "Keliling persegi panjang dengan panjang 18 cm dan lebar 12 cm adalah...",
+        "question": "Keliling persegi panjang dengan panjang 18 cm dan lebar 12 cm adalah...",
+        "options": [
+          "30 cm",
+          "216 cm",
+          "108 cm",
+          "60 cm"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Rumus keliling persegi panjang adalah 2 x (18 + 12) = 60 cm."
+      },
+      {
+        "q": "Kelipatan Persekutuan Terkecil (KPK) dari 12 dan 18 adalah...",
+        "question": "Kelipatan Persekutuan Terkecil (KPK) dari 12 dan 18 adalah...",
+        "options": [
+          "24",
+          "48",
+          "36",
+          "72"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Kelipatan 12 adalah 12 24 36 dan kelipatan 18 adalah 18 36 sehingga KPK-nya 36."
+      },
+      {
+        "q": "Volume balok berukuran panjang 10 cm lebar 6 cm dan tinggi 5 cm adalah...",
+        "question": "Volume balok berukuran panjang 10 cm lebar 6 cm dan tinggi 5 cm adalah...",
+        "options": [
+          "300 cm3",
+          "150 cm3",
+          "21 cm3",
+          "600 cm3"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Volume balok dihitung dengan panjang x lebar x tinggi yaitu 10 x 6 x 5 = 300 cm3."
+      },
+      {
+        "q": "Luas lingkaran yang memiliki jari-jari 14 cm adalah...",
+        "question": "Luas lingkaran yang memiliki jari-jari 14 cm adalah...",
+        "options": [
+          "88 cm2",
+          "154 cm2",
+          "616 cm2",
+          "308 cm2"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 30,
+        "points": 100,
+        "explanation": "Luas lingkaran = 22/7 x 14 x 14 = 616 cm2."
+      },
+      {
+        "q": "Jarak dua kota pada peta berskala 1 : 2.000.000 adalah 6 cm. Jarak sebenarnya kedua kota tersebut adalah...",
+        "question": "Jarak dua kota pada peta berskala 1 : 2.000.000 adalah 6 cm. Jarak sebenarnya kedua kota tersebut adalah...",
+        "options": [
+          "12 km",
+          "120 km",
+          "60 km",
+          "1.200 km"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 30,
+        "points": 100,
+        "explanation": "Jarak sebenarnya = 6 cm x 2.000.000 = 12.000.000 cm = 120 km."
+      },
+      {
+        "q": "Planet terbesar di dalam tata surya adalah...",
+        "question": "Planet terbesar di dalam tata surya adalah...",
+        "options": [
+          "Mars",
+          "Saturnus",
+          "Jupiter",
+          "Bumi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Jupiter adalah planet terbesar dengan diameter 11 kali Bumi."
+      },
+      {
+        "q": "Bagian tumbuhan yang bertugas utama melakukan fotosintesis adalah...",
+        "question": "Bagian tumbuhan yang bertugas utama melakukan fotosintesis adalah...",
+        "options": [
+          "Akar",
+          "Daun",
+          "Batang",
+          "Bunga"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Daun mengandung zat klorofil yang menyerap cahaya matahari."
+      },
+      {
+        "q": "Gaya yang menyebabkan benda jatuh ke bawah menuju bumi adalah gaya...",
+        "question": "Gaya yang menyebabkan benda jatuh ke bawah menuju bumi adalah gaya...",
+        "options": [
+          "Gravitasi",
+          "Gesek",
+          "Pegas",
+          "Magnet"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Gaya gravitasi menarik semua benda bermassa ke pusat bumi."
+      },
+      {
+        "q": "Bagian tubuh ikan yang berfungsi untuk berenang dan menjaga keseimbangan di air adalah...",
+        "question": "Bagian tubuh ikan yang berfungsi untuk berenang dan menjaga keseimbangan di air adalah...",
+        "options": [
+          "Sirip dan ekor",
+          "Insang",
+          "Sisik",
+          "Sungut"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Sirip dan ekor membantu ikan bergerak dan berbelok di dalam air."
+      },
+      {
+        "q": "Urutan metamorfosis sempurna pada kupu-kupu yang benar adalah...",
+        "question": "Urutan metamorfosis sempurna pada kupu-kupu yang benar adalah...",
+        "options": [
+          "Telur - Nimfa - Kupu-kupu",
+          "Telur - Kepompong - Ulat - Kupu-kupu",
+          "Ulat - Telur - Kepompong - Kupu-kupu",
+          "Telur - Ulat - Kepompong - Kupu-kupu"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Kupu-kupu mengalami fase telur lalu larva (ulat) lalu pupa (kepompong) dan menjadi kupu-kupu."
+      },
+      {
+        "q": "Perubahan wujud benda padat langsung menjadi gas seperti pada kapur barus disebut...",
+        "question": "Perubahan wujud benda padat langsung menjadi gas seperti pada kapur barus disebut...",
+        "options": [
+          "Mencair",
+          "Menguap",
+          "Mengembun",
+          "Menyublim"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Menyublim adalah peristiwa perubahan wujud zat padat menjadi gas."
+      },
+      {
+        "q": "Organ pencernaan manusia yang berfungsi menyerap sari-sari makanan adalah...",
+        "question": "Organ pencernaan manusia yang berfungsi menyerap sari-sari makanan adalah...",
+        "options": [
+          "Usus halus",
+          "Lambung",
+          "Usus besar",
+          "Kerongkongan"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Usus halus mencerna makanan secara kimiawi dan menyerap sari makanan ke darah."
+      },
+      {
+        "q": "Pada rantai makanan padi dimakan tikus dan tikus dimakan ular maka ular berperan sebagai...",
+        "question": "Pada rantai makanan padi dimakan tikus dan tikus dimakan ular maka ular berperan sebagai...",
+        "options": [
+          "Produsen",
+          "Konsumen tingkat II",
+          "Konsumen tingkat I",
+          "Pengurai"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Padi adalah produsen lalu tikus konsumen tingkat I dan ular adalah konsumen tingkat II."
+      },
+      {
+        "q": "Perpindahan panas melalui zat perantara logam tanpa disertai perpindahan partikelnya disebut...",
+        "question": "Perpindahan panas melalui zat perantara logam tanpa disertai perpindahan partikelnya disebut...",
+        "options": [
+          "Radiasi",
+          "Konveksi",
+          "Konduksi",
+          "Isolasi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Konduksi merupakan perpindahan kalor melalui penghantar padat seperti logam."
+      },
+      {
+        "q": "Tumbuhan bawang merah berkembang biak secara vegetatif alami menggunakan...",
+        "question": "Tumbuhan bawang merah berkembang biak secara vegetatif alami menggunakan...",
+        "options": [
+          "Umbi lapis",
+          "Umbi batang",
+          "Tunas adventif",
+          "Geragih"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Bawang merah memiliki susunan daun berlapis yang membentuk umbi lapis."
+      },
+      {
+        "q": "Antonim atau lawan kata dari hemat adalah...",
+        "question": "Antonim atau lawan kata dari hemat adalah...",
+        "options": [
+          "Irit",
+          "Cermat",
+          "Rajin",
+          "Boros"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Lawan kata dari hemat adalah boros sedangkan irit merupakan sinonimnya."
+      },
+      {
+        "q": "Penulisan kata baku yang tepat sesuai Kamus Besar Bahasa Indonesia adalah...",
+        "question": "Penulisan kata baku yang tepat sesuai Kamus Besar Bahasa Indonesia adalah...",
+        "options": [
+          "Apotik",
+          "Apotek",
+          "Apoteker",
+          "Apotikh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Bentuk kata baku yang terdaftar dalam KBBI adalah apotek."
+      },
+      {
+        "q": "Penulisan huruf kapital yang benar pada kalimat berikut adalah...",
+        "question": "Penulisan huruf kapital yang benar pada kalimat berikut adalah...",
+        "options": [
+          "ani pergi ke kota bogor.",
+          "Ani pergi ke kota Bogor.",
+          "Ani pergi ke Kota Bogor.",
+          "ani pergi ke Kota bogor."
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Huruf kapital dipakai di awal kalimat serta pada nama orang dan nama geografi."
+      },
+      {
+        "q": "Gagasan utama yang menjadi dasar pengembangan sebuah paragraf disebut...",
+        "question": "Gagasan utama yang menjadi dasar pengembangan sebuah paragraf disebut...",
+        "options": [
+          "Kalimat penjelas",
+          "Ringkasan",
+          "Kata kunci",
+          "Ide pokok"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Ide pokok merupakan inti pembahasan utama dalam suatu paragraf."
+      },
+      {
+        "q": "Angin malam berbisik lembut menyapa dedaunan. Kalimat tersebut menggunakan majas...",
+        "question": "Angin malam berbisik lembut menyapa dedaunan. Kalimat tersebut menggunakan majas...",
+        "options": [
+          "Hiperbola",
+          "Simile",
+          "Metafora",
+          "Personifikasi"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Majas personifikasi memberikan sifat manusia kepada benda mati seperti angin."
+      },
+      {
+        "q": "Sajak akhir pada baris-baris pantun yang benar berpola...",
+        "question": "Sajak akhir pada baris-baris pantun yang benar berpola...",
+        "options": [
+          "a-a-a-a",
+          "a-a-b-b",
+          "a-b-a-b",
+          "a-b-b-a"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Pantun memiliki rima silang yaitu baris pertama sama dengan ketiga dan kedua sama dengan keempat."
+      },
+      {
+        "q": "Bagian teks eksplanasi yang berisi urutan sebab-akibat terjadinya suatu fenomena adalah...",
+        "question": "Bagian teks eksplanasi yang berisi urutan sebab-akibat terjadinya suatu fenomena adalah...",
+        "options": [
+          "Pernyataan umum",
+          "Interpretasi",
+          "Deretan penjelas",
+          "Orientasi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Deretan penjelas memaparkan proses dan hubungan sebab-akibat suatu peristiwa."
+      },
+      {
+        "q": "Kalimat di bawah ini yang termasuk kalimat intransitif tanpa objek adalah...",
+        "question": "Kalimat di bawah ini yang termasuk kalimat intransitif tanpa objek adalah...",
+        "options": [
+          "Ibu memasak sayur bayam.",
+          "Adik tertidur pulas di kamar.",
+          "Kakak membaca buku cerita.",
+          "Ayah mencuci sepeda motor."
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Kata kerja tertidur tidak memerlukan objek sehingga membentuk kalimat intransitif."
+      },
+      {
+        "q": "Ungkapan buah tangan memiliki arti...",
+        "question": "Ungkapan buah tangan memiliki arti...",
+        "options": [
+          "Hasil karya",
+          "Oleh-oleh",
+          "Anak kesayangan",
+          "Pekerjaan berat"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Idiom buah tangan bermakna barang bawaan atau oleh-oleh."
+      },
+      {
+        "q": "Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya peristiwa adalah...",
+        "question": "Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya peristiwa adalah...",
+        "options": [
+          "Kapan",
+          "Di mana",
+          "Siapa",
+          "Mengapa"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Kata tanya mengapa berfungsi menanyakan sebab atau alasan suatu kejadian."
+      },
+      {
+        "q": "The color of a ripe banana is...",
+        "question": "The color of a ripe banana is...",
+        "options": [
+          "Blue",
+          "Black",
+          "Purple",
+          "Yellow"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Pisang yang sudah matang berwarna kuning atau yellow dalam bahasa Inggris."
+      },
+      {
+        "q": "Today is Wednesday. Tomorrow will be...",
+        "question": "Today is Wednesday. Tomorrow will be...",
+        "options": [
+          "Tuesday",
+          "Friday",
+          "Thursday",
+          "Monday"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Setelah hari Rabu (Wednesday) adalah hari Kamis (Thursday)."
+      },
+      {
+        "q": "It is 07.30 in the morning. In English we say half past...",
+        "question": "It is 07.30 in the morning. In English we say half past...",
+        "options": [
+          "Six",
+          "Eight",
+          "Seven",
+          "Nine"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Pukul 07.30 berarti lewat tiga puluh menit dari pukul tujuh atau half past seven."
+      },
+      {
+        "q": "Siti always ... her teeth before going to bed.",
+        "question": "Siti always ... her teeth before going to bed.",
+        "options": [
+          "brush",
+          "brushed",
+          "brushing",
+          "brushes"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Subjek orang ketiga tunggal Siti menggunakan kata kerja berakhiran -es pada Simple Present."
+      },
+      {
+        "q": "Budi ate too many candies yesterday. Now he has a...",
+        "question": "Budi ate too many candies yesterday. Now he has a...",
+        "options": [
+          "headache",
+          "toothache",
+          "earache",
+          "backache"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Makan terlalu banyak permen menyebabkan sakit gigi atau toothache."
+      },
+      {
+        "q": "An elephant is ... than a rabbit.",
+        "question": "An elephant is ... than a rabbit.",
+        "options": [
+          "smaller",
+          "thinner",
+          "shorter",
+          "bigger"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Gajah lebih besar daripada kelinci sehingga menggunakan bentuk comparative bigger."
+      },
+      {
+        "q": "Where do you go if you want to borrow and read many books?",
+        "question": "Where do you go if you want to borrow and read many books?",
+        "options": [
+          "Hospital",
+          "Market",
+          "Post office",
+          "Library"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Tempat untuk meminjam dan membaca buku adalah perpustakaan atau library."
+      },
+      {
+        "q": "My family and I ... to Yogyakarta by train last holiday.",
+        "question": "My family and I ... to Yogyakarta by train last holiday.",
+        "options": [
+          "went",
+          "goes",
+          "go",
+          "going"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Keterangan waktu last holiday menandakan masa lampau sehingga memakai verb 2 went."
+      },
+      {
+        "q": "The opposite of the word cold is...",
+        "question": "The opposite of the word cold is...",
+        "options": [
+          "Wet",
+          "Soft",
+          "Hot",
+          "Dark"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Lawan kata dari dingin (cold) adalah panas (hot)."
+      },
+      {
+        "q": "How many days are there in a week?",
+        "question": "How many days are there in a week?",
+        "options": [
+          "Five",
+          "Six",
+          "Seven",
+          "Eight"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Dalam satu minggu terdapat tujuh hari atau seven days."
+      },
+      {
+        "q": "Siapakah Bapak Pendidikan Nasional Indonesia?",
+        "question": "Siapakah Bapak Pendidikan Nasional Indonesia?",
+        "options": [
+          "Ki Hajar Dewantara",
+          "Ir. Soekarno",
+          "Mohammad Hatta",
+          "Jenderal Soedirman"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Ki Hajar Dewantara mendirikan Taman Siswa dengan semboyan Tut Wuri Handayani."
+      },
+      {
+        "q": "Simbol sila keempat Pancasila pada perisai burung Garuda adalah...",
+        "question": "Simbol sila keempat Pancasila pada perisai burung Garuda adalah...",
+        "options": [
+          "Pohon beringin",
+          "Rantai emas",
+          "Kepala banteng",
+          "Padi dan kapas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Kepala banteng melambangkan sila keempat Pancasila tentang musyawarah."
+      },
+      {
+        "q": "Rumah adat Tongkonan berasal dari provinsi...",
+        "question": "Rumah adat Tongkonan berasal dari provinsi...",
+        "options": [
+          "Sulawesi Selatan",
+          "Sumatera Barat",
+          "Kalimantan Timur",
+          "Papua"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Tongkonan merupakan rumah adat tradisional masyarakat Toraja di Sulawesi Selatan."
+      },
+      {
+        "q": "Kegiatan menyalurkan barang hasil produksi dari produsen ke konsumen disebut...",
+        "question": "Kegiatan menyalurkan barang hasil produksi dari produsen ke konsumen disebut...",
+        "options": [
+          "Distribusi",
+          "Produksi",
+          "Konsumsi",
+          "Investasi"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Distribusi adalah kegiatan ekonomi yang menyalurkan barang hingga sampai ke konsumen."
+      },
+      {
+        "q": "Indonesia dijuluki sebagai negara maritim karena...",
+        "question": "Indonesia dijuluki sebagai negara maritim karena...",
+        "options": [
+          "Sebagian besar penduduknya bertani",
+          "Wilayah perairan lautnya lebih luas dari daratan",
+          "Memiliki banyak gunung berapi",
+          "Berada di daerah kutub"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Negara maritim memiliki wilayah laut yang luas dan memanfaatkan potensi kelautan."
+      },
+      {
+        "q": "Peristiwa Rengasdengklok pada 16 Agustus 1945 bertujuan agar Soekarno-Hatta segera...",
+        "question": "Peristiwa Rengasdengklok pada 16 Agustus 1945 bertujuan agar Soekarno-Hatta segera...",
+        "options": [
+          "Menyusun kabinet",
+          "Memproklamasikan kemerdekaan Indonesia",
+          "Membentuk tentara",
+          "Menyerah kepada Sekutu"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 25,
+        "points": 100,
+        "explanation": "Golongan muda mengamankan Soekarno-Hatta agar proklamasi segera dilaksanakan tanpa pengaruh Jepang."
+      },
+      {
+        "q": "Negara pendiri ASEAN di kawasan Asia Tenggara yang tidak pernah dijajah bangsa Eropa adalah...",
+        "question": "Negara pendiri ASEAN di kawasan Asia Tenggara yang tidak pernah dijajah bangsa Eropa adalah...",
+        "options": [
+          "Indonesia",
+          "Thailand",
+          "Malaysia",
+          "Filipina"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Thailand adalah satu-satunya negara di Asia Tenggara yang tidak pernah dijajah negara Barat."
+      },
+      {
+        "q": "Hari Sumpah Pemuda diperingati oleh bangsa Indonesia setiap tanggal...",
+        "question": "Hari Sumpah Pemuda diperingati oleh bangsa Indonesia setiap tanggal...",
+        "options": [
+          "28 Oktober",
+          "20 Mei",
+          "17 Agustus",
+          "10 November"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Ikrar Sumpah Pemuda dibacakan pada Kongres Pemuda II tanggal 28 Oktober 1928."
+      },
+      {
+        "q": "Semboyan Bhinneka Tunggal Ika memiliki arti...",
+        "question": "Semboyan Bhinneka Tunggal Ika memiliki arti...",
+        "options": [
+          "Berbeda-beda tetapi tetap satu jua",
+          "Bersatu kita teguh",
+          "Maju terus pantang mundur",
+          "Keadilan bagi seluruh rakyat"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 15,
+        "points": 100,
+        "explanation": "Bhinneka Tunggal Ika bermakna meskipun berbeda suku dan budaya bangsa Indonesia tetap satu."
+      },
+      {
+        "q": "Sikap yang mencerminkan pengamalan sila ketiga Pancasila di sekolah adalah...",
+        "question": "Sikap yang mencerminkan pengamalan sila ketiga Pancasila di sekolah adalah...",
+        "options": [
+          "Mencontek saat ulangan",
+          "Membuang sampah sembarangan",
+          "Memilih teman satu daerah saja",
+          "Bekerja sama melaksanakan piket kelas"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": "Gotong royong dan kerja sama tanpa membeda-bedakan memperkuat persatuan di sekolah."
+      }
+    ],
+    "questionsSMP": [
+      {
+        "q": "Hasil dari (-12) + 19 - 5 adalah...",
+        "question": "Hasil dari (-12) + 19 - 5 adalah...",
+        "options": [
+          "-2",
+          "2",
+          "12",
+          "-12"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Jika 3x + 5 = 20, maka nilai x adalah...",
+        "question": "Jika 3x + 5 = 20, maka nilai x adalah...",
+        "options": [
+          "3",
+          "5",
+          "7",
+          "15"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "FPB dari 24 dan 36 adalah...",
+        "question": "FPB dari 24 dan 36 adalah...",
+        "options": [
+          "6",
+          "8",
+          "12",
+          "18"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Hasil dari 2^4 + 3^2 adalah...",
+        "question": "Hasil dari 2^4 + 3^2 adalah...",
+        "options": [
+          "17",
+          "25",
+          "27",
+          "32"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Besar sudut berpelurus (suplemen) dari sudut 115 derajat adalah...",
+        "question": "Besar sudut berpelurus (suplemen) dari sudut 115 derajat adalah...",
+        "options": [
+          "55 derajat",
+          "65 derajat",
+          "75 derajat",
+          "85 derajat"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "KPK dari 12 dan 18 adalah...",
+        "question": "KPK dari 12 dan 18 adalah...",
+        "options": [
+          "24",
+          "36",
+          "48",
+          "72"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Nilai dari akar kuadrat 169 ditambah akar kuadrat 36 adalah...",
+        "question": "Nilai dari akar kuadrat 169 ditambah akar kuadrat 36 adalah...",
+        "options": [
+          "17",
+          "19",
+          "21",
+          "23"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Perbandingan uang Ani dan Budi adalah 3 : 5. Jika jumlah uang mereka Rp80.000, uang Ani adalah...",
+        "question": "Perbandingan uang Ani dan Budi adalah 3 : 5. Jika jumlah uang mereka Rp80.000, uang Ani adalah...",
+        "options": [
+          "Rp24.000",
+          "Rp30.000",
+          "Rp40.000",
+          "Rp50.000"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah...",
+        "question": "Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah...",
+        "options": [
+          "9 cm",
+          "10 cm",
+          "12 cm",
+          "14 cm"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Bentuk sederhana dari 4a + 3b - 2a + 5b adalah...",
+        "question": "Bentuk sederhana dari 4a + 3b - 2a + 5b adalah...",
+        "options": [
+          "2a + 8b",
+          "6a + 8b",
+          "2a + 2b",
+          "6a - 2b"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Mean (rata-rata) dari data 6, 7, 8, 9, 10 adalah...",
+        "question": "Mean (rata-rata) dari data 6, 7, 8, 9, 10 adalah...",
+        "options": [
+          "7",
+          "7,5",
+          "8",
+          "8,5"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Jika sebuah dadu bermata enam dilempar sekali, peluang muncul mata dadu genap adalah...",
+        "question": "Jika sebuah dadu bermata enam dilempar sekali, peluang muncul mata dadu genap adalah...",
+        "options": [
+          "1/6",
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Suku ke-5 dari barisan aritmatika 3, 7, 11, 15, ... adalah...",
+        "question": "Suku ke-5 dari barisan aritmatika 3, 7, 11, 15, ... adalah...",
+        "options": [
+          "17",
+          "19",
+          "21",
+          "23"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Luas lingkaran dengan jari-jari 7 cm (pi = 22/7) adalah...",
+        "question": "Luas lingkaran dengan jari-jari 7 cm (pi = 22/7) adalah...",
+        "options": [
+          "44 cm2",
+          "154 cm2",
+          "308 cm2",
+          "616 cm2"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      },
+      {
+        "q": "Gradien garis dengan persamaan y = 3x - 7 adalah...",
+        "question": "Gradien garis dengan persamaan y = 3x - 7 adalah...",
+        "options": [
+          "-7",
+          "-3",
+          "3",
+          "7"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20,
+        "points": 100,
+        "explanation": ""
+      }
+    ]
+  },
+  "mg-02": {
+    "id": "mg-02",
+    "title": "Labirin Eksplorasi Sejarah & Geografi",
+    "subject": "IPS · Sejarah & Geografi",
+    "grade": "SD & SMP",
+    "description": "Jelajahi arena pengetahuan Nusantara, sejarah, dan geografi dunia!",
+    "questions": [
+      {
+        "q": "Pulau terbesar di Indonesia adalah...",
+        "options": [
+          "Jawa",
+          "Sumatra",
+          "Kalimantan",
+          "Sulawesi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Tanggal kemerdekaan Republik Indonesia adalah...",
+        "options": [
+          "17 Agustus 1945",
+          "28 Oktober 1928",
+          "10 November 1945",
+          "1 Juni 1945"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Candi Borobudur terletak di provinsi...",
+        "options": [
+          "Jawa Barat",
+          "Jawa Tengah",
+          "Jawa Timur",
+          "Bali"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Matahari terbit dari arah...",
+        "options": [
+          "Barat",
+          "Utara",
+          "Selatan",
+          "Timur"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 18
+      },
+      {
+        "q": "Danau Toba yang terkenal berada di provinsi...",
+        "options": [
+          "Sumatra Utara",
+          "Sumatra Barat",
+          "Riau",
+          "Lampung"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Rumah adat Tongkonan berasal dari daerah...",
+        "options": [
+          "Padang",
+          "Toraja",
+          "Papua",
+          "Aceh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Tari Saman berasal dari provinsi...",
+        "options": [
+          "Bali",
+          "Aceh",
+          "Jawa Timur",
+          "Maluku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pahlawan nasional yang dijuluki Bapak Pendidikan Indonesia adalah...",
+        "options": [
+          "R.A. Kartini",
+          "Ki Hajar Dewantara",
+          "Pangeran Diponegoro",
+          "Cut Nyak Dien"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Sungai terpanjang di Indonesia yang berada di Kalimantan adalah...",
+        "options": [
+          "Sungai Musi",
+          "Sungai Bengawan Solo",
+          "Sungai Kapuas",
+          "Sungai Brantas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Alat musik tradisional Angklung berasal dari...",
+        "options": [
+          "Jawa Barat",
+          "Bali",
+          "Papua",
+          "Sulawesi Selatan"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Semboyan negara Indonesia adalah...",
+        "options": [
+          "Tut Wuri Handayani",
+          "Bhinneka Tunggal Ika",
+          "Ing Ngarsa Sung Tulada",
+          "Bersatu Kita Teguh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benua tempat negara Indonesia berada adalah...",
+        "options": [
+          "Eropa",
+          "Afrika",
+          "Asia",
+          "Australia"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Gunung tertinggi di Pulau Jawa adalah...",
+        "options": [
+          "Gunung Merapi",
+          "Gunung Bromo",
+          "Gunung Semeru",
+          "Gunung Slamet"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Hari Sumpah Pemuda diperingati setiap tanggal...",
+        "options": [
+          "20 Mei",
+          "17 Agustus",
+          "28 Oktober",
+          "10 November"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Hewan langka Komodo berasal dari provinsi...",
+        "options": [
+          "Nusa Tenggara Barat",
+          "Nusa Tenggara Timur",
+          "Papua",
+          "Maluku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      }
+    ],
+    "questionsSD": [
+      {
+        "q": "Pulau terbesar di Indonesia adalah...",
+        "options": [
+          "Jawa",
+          "Sumatra",
+          "Kalimantan",
+          "Sulawesi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Tanggal kemerdekaan Republik Indonesia adalah...",
+        "options": [
+          "17 Agustus 1945",
+          "28 Oktober 1928",
+          "10 November 1945",
+          "1 Juni 1945"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Candi Borobudur terletak di provinsi...",
+        "options": [
+          "Jawa Barat",
+          "Jawa Tengah",
+          "Jawa Timur",
+          "Bali"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Matahari terbit dari arah...",
+        "options": [
+          "Barat",
+          "Utara",
+          "Selatan",
+          "Timur"
+        ],
+        "correctIndex": 3,
+        "timeLimit": 18
+      },
+      {
+        "q": "Danau Toba yang terkenal berada di provinsi...",
+        "options": [
+          "Sumatra Utara",
+          "Sumatra Barat",
+          "Riau",
+          "Lampung"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Rumah adat Tongkonan berasal dari daerah...",
+        "options": [
+          "Padang",
+          "Toraja",
+          "Papua",
+          "Aceh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Tari Saman berasal dari provinsi...",
+        "options": [
+          "Bali",
+          "Aceh",
+          "Jawa Timur",
+          "Maluku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pahlawan nasional yang dijuluki Bapak Pendidikan Indonesia adalah...",
+        "options": [
+          "R.A. Kartini",
+          "Ki Hajar Dewantara",
+          "Pangeran Diponegoro",
+          "Cut Nyak Dien"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Sungai terpanjang di Indonesia yang berada di Kalimantan adalah...",
+        "options": [
+          "Sungai Musi",
+          "Sungai Bengawan Solo",
+          "Sungai Kapuas",
+          "Sungai Brantas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Alat musik tradisional Angklung berasal dari...",
+        "options": [
+          "Jawa Barat",
+          "Bali",
+          "Papua",
+          "Sulawesi Selatan"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Semboyan negara Indonesia adalah...",
+        "options": [
+          "Tut Wuri Handayani",
+          "Bhinneka Tunggal Ika",
+          "Ing Ngarsa Sung Tulada",
+          "Bersatu Kita Teguh"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benua tempat negara Indonesia berada adalah...",
+        "options": [
+          "Eropa",
+          "Afrika",
+          "Asia",
+          "Australia"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Gunung tertinggi di Pulau Jawa adalah...",
+        "options": [
+          "Gunung Merapi",
+          "Gunung Bromo",
+          "Gunung Semeru",
+          "Gunung Slamet"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Hari Sumpah Pemuda diperingati setiap tanggal...",
+        "options": [
+          "20 Mei",
+          "17 Agustus",
+          "28 Oktober",
+          "10 November"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Hewan langka Komodo berasal dari provinsi...",
+        "options": [
+          "Nusa Tenggara Barat",
+          "Nusa Tenggara Timur",
+          "Papua",
+          "Maluku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      }
+    ],
+    "questionsSMP": [
+      {
+        "q": "Kerajaan Hindu tertua di Indonesia yang berada di Kalimantan Timur adalah...",
+        "options": [
+          "Majapahit",
+          "Sriwijaya",
+          "Kutai",
+          "Tarumanegara"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Indonesia secara astronomis terletak pada garis lintang...",
+        "options": [
+          "6 LU - 11 LS",
+          "11 LU - 6 LS",
+          "23 LU - 23 LS",
+          "0 LU - 15 LS"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20
+      },
+      {
+        "q": "Organisasi pergerakan nasional pertama yang berdiri pada 20 Mei 1908 adalah...",
+        "options": [
+          "Sarekat Islam",
+          "Budi Utomo",
+          "Indische Partij",
+          "Perhimpunan Indonesia"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Garis khayal yang membagi fauna Indonesia bagian barat dan tengah disebut...",
+        "options": [
+          "Garis Khatulistiwa",
+          "Garis Wallace",
+          "Garis Weber",
+          "Garis Meridian"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Kerajaan maritim besar di Sumatra yang menjadi pusat agama Buddha adalah...",
+        "options": [
+          "Majapahit",
+          "Sriwijaya",
+          "Singasari",
+          "Mataram"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Negara anggota ASEAN yang tidak memiliki wilayah laut (landlocked) adalah...",
+        "options": [
+          "Thailand",
+          "Kamboja",
+          "Laos",
+          "Myanmar"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Peristiwa penculikan Soekarno-Hatta oleh golongan muda sebelum proklamasi disebut...",
+        "options": [
+          "Peristiwa Bandung Lautan Api",
+          "Peristiwa Rengasdengklok",
+          "Perjanjian Linggarjati",
+          "Konferensi Meja Bundar"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Samudra yang mengapit wilayah Indonesia adalah...",
+        "options": [
+          "Atlantik dan Hindia",
+          "Pasifik dan Atlantik",
+          "Hindia dan Pasifik",
+          "Arktik dan Pasifik"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Skala peta 1 : 500.000 artinya 1 cm di peta mewakili jarak sebenarnya sebesar...",
+        "options": [
+          "500 meter",
+          "5 km",
+          "50 km",
+          "500 km"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Naskah proklamasi kemerdekaan Indonesia diketik oleh...",
+        "options": [
+          "Ahmad Soebardjo",
+          "Sayuti Melik",
+          "Sukarni",
+          "Latief Hendraningrat"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Lapisan atmosfer tempat terjadinya cuaca, awan, dan hujan adalah...",
+        "options": [
+          "Troposfer",
+          "Stratosfer",
+          "Mesosfer",
+          "Termosfer"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20
+      },
+      {
+        "q": "Benua terluas di permukaan Bumi adalah...",
+        "options": [
+          "Amerika",
+          "Afrika",
+          "Asia",
+          "Eropa"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Perang Diponegoro terjadi pada tahun 1825-1830 di wilayah...",
+        "options": [
+          "Sumatra Barat",
+          "Jawa",
+          "Aceh",
+          "Bali"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Sistem tanam paksa (Cultuurstelsel) pada masa kolonial Belanda dicetuskan oleh...",
+        "options": [
+          "Herman Willem Daendels",
+          "Thomas Stamford Raffles",
+          "Johannes van den Bosch",
+          "Cornelis de Houtman"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "ASEAN resmi didirikan pada tanggal 8 Agustus 1967 melalui Deklarasi...",
+        "options": [
+          "Jakarta",
+          "Bangkok",
+          "Manila",
+          "Kuala Lumpur"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      }
+    ]
+  },
+  "mg-03": {
+    "id": "mg-03",
+    "title": "Laboratorium IPA & Eksperimen",
+    "subject": "IPA · Fisika, Kimia & Biologi",
+    "grade": "SD & SMP",
+    "description": "Uji ketangkasan sains dasar, wujud benda, energi, dan reaksi kimia SD & SMP!",
+    "questions": [
+      {
+        "q": "Perubahan wujud benda dari padat menjadi cair disebut...",
+        "options": [
+          "Membeku",
+          "Mencair",
+          "Menguap",
+          "Menyublim"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benda yang dapat ditarik kuat oleh magnet adalah...",
+        "options": [
+          "Plastik",
+          "Kayu",
+          "Besi",
+          "Kaca"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Bunyi dapat merambat paling cepat melalui medium...",
+        "options": [
+          "Udara",
+          "Air",
+          "Benda padat",
+          "Ruang hampa"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Proses tumbuhan hijau membuat makanan dengan bantuan cahaya matahari disebut...",
+        "options": [
+          "Respirasi",
+          "Fotosintesis",
+          "Adaptasi",
+          "Evaporasi"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benda yang menghantarkan panas dengan baik disebut...",
+        "options": [
+          "Isolator",
+          "Konduktor",
+          "Radiator",
+          "Resistor"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Perubahan wujud dari cair menjadi gas disebut...",
+        "options": [
+          "Menguap",
+          "Mengembun",
+          "Membeku",
+          "Mengkristal"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Gaya yang menyebabkan buah apel jatuh ke tanah adalah gaya...",
+        "options": [
+          "Gesek",
+          "Magnet",
+          "Gravitasi",
+          "Pegas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Air murni mendidih pada suhu...",
+        "options": [
+          "0 derajat C",
+          "50 derajat C",
+          "100 derajat C",
+          "120 derajat C"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Bentuk energi yang tersimpan di dalam baterai adalah energi...",
+        "options": [
+          "Kimia",
+          "Gerak",
+          "Bunyi",
+          "Panas"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pelangi terbentuk karena cahaya matahari mengalami...",
+        "options": [
+          "Pemantulan",
+          "Pembiasan dan penguraian",
+          "Penyerapan",
+          "Pembekuan"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Alat yang digunakan untuk mengukur suhu tubuh adalah...",
+        "options": [
+          "Barometer",
+          "Termometer",
+          "Speedometer",
+          "Higrometer"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Contoh sumber energi alternatif yang ramah lingkungan adalah...",
+        "options": [
+          "Batu bara",
+          "Minyak bumi",
+          "Tenaga surya",
+          "Solar"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Kapur barus yang lama-kelamaan habis di lemari mengalami peristiwa...",
+        "options": [
+          "Mencair",
+          "Menyublim",
+          "Mengembun",
+          "Membeku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Satuan panjang baku dalam sistem internasional adalah...",
+        "options": [
+          "Kilogram",
+          "Meter",
+          "Detik",
+          "Liter"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pada rangkaian listrik, lampu akan menyala jika saklar dalam posisi...",
+        "options": [
+          "Terbuka",
+          "Tertutup",
+          "Putus",
+          "Lepas"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      }
+    ],
+    "questionsSD": [
+      {
+        "q": "Perubahan wujud benda dari padat menjadi cair disebut...",
+        "options": [
+          "Membeku",
+          "Mencair",
+          "Menguap",
+          "Menyublim"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benda yang dapat ditarik kuat oleh magnet adalah...",
+        "options": [
+          "Plastik",
+          "Kayu",
+          "Besi",
+          "Kaca"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Bunyi dapat merambat paling cepat melalui medium...",
+        "options": [
+          "Udara",
+          "Air",
+          "Benda padat",
+          "Ruang hampa"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Proses tumbuhan hijau membuat makanan dengan bantuan cahaya matahari disebut...",
+        "options": [
+          "Respirasi",
+          "Fotosintesis",
+          "Adaptasi",
+          "Evaporasi"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Benda yang menghantarkan panas dengan baik disebut...",
+        "options": [
+          "Isolator",
+          "Konduktor",
+          "Radiator",
+          "Resistor"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Perubahan wujud dari cair menjadi gas disebut...",
+        "options": [
+          "Menguap",
+          "Mengembun",
+          "Membeku",
+          "Mengkristal"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Gaya yang menyebabkan buah apel jatuh ke tanah adalah gaya...",
+        "options": [
+          "Gesek",
+          "Magnet",
+          "Gravitasi",
+          "Pegas"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Air murni mendidih pada suhu...",
+        "options": [
+          "0 derajat C",
+          "50 derajat C",
+          "100 derajat C",
+          "120 derajat C"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Bentuk energi yang tersimpan di dalam baterai adalah energi...",
+        "options": [
+          "Kimia",
+          "Gerak",
+          "Bunyi",
+          "Panas"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pelangi terbentuk karena cahaya matahari mengalami...",
+        "options": [
+          "Pemantulan",
+          "Pembiasan dan penguraian",
+          "Penyerapan",
+          "Pembekuan"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Alat yang digunakan untuk mengukur suhu tubuh adalah...",
+        "options": [
+          "Barometer",
+          "Termometer",
+          "Speedometer",
+          "Higrometer"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Contoh sumber energi alternatif yang ramah lingkungan adalah...",
+        "options": [
+          "Batu bara",
+          "Minyak bumi",
+          "Tenaga surya",
+          "Solar"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 18
+      },
+      {
+        "q": "Kapur barus yang lama-kelamaan habis di lemari mengalami peristiwa...",
+        "options": [
+          "Mencair",
+          "Menyublim",
+          "Mengembun",
+          "Membeku"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Satuan panjang baku dalam sistem internasional adalah...",
+        "options": [
+          "Kilogram",
+          "Meter",
+          "Detik",
+          "Liter"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      },
+      {
+        "q": "Pada rangkaian listrik, lampu akan menyala jika saklar dalam posisi...",
+        "options": [
+          "Terbuka",
+          "Tertutup",
+          "Putus",
+          "Lepas"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 18
+      }
+    ],
+    "questionsSMP": [
+      {
+        "q": "Satuan Internasional (SI) untuk gaya adalah...",
+        "options": [
+          "Joule",
+          "Watt",
+          "Newton",
+          "Pascal"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Rumus kimia untuk senyawa air adalah...",
+        "options": [
+          "CO2",
+          "H2O",
+          "NaCl",
+          "O2"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Sebuah mobil menempuh jarak 120 km dalam waktu 2 jam. Kecepatan rata-ratanya adalah...",
+        "options": [
+          "40 km/jam",
+          "50 km/jam",
+          "60 km/jam",
+          "80 km/jam"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Larutan yang memiliki nilai pH kurang dari 7 bersifat...",
+        "options": [
+          "Asam",
+          "Basa",
+          "Netral",
+          "Garam"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20
+      },
+      {
+        "q": "Garam dapur dalam ilmu kimia memiliki rumus senyawa...",
+        "options": [
+          "HCl",
+          "NaOH",
+          "NaCl",
+          "H2SO4"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Hukum Newton II dirumuskan dengan persamaan...",
+        "options": [
+          "F = m x a",
+          "v = s / t",
+          "P = F / A",
+          "W = F x s"
+        ],
+        "correctIndex": 0,
+        "timeLimit": 20
+      },
+      {
+        "q": "Perpindahan kalor tanpa memerlukan zat perantara (seperti panas matahari ke Bumi) disebut...",
+        "options": [
+          "Konduksi",
+          "Konveksi",
+          "Radiasi",
+          "Isolasi"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Satuan Internasional (SI) untuk kuat arus listrik adalah...",
+        "options": [
+          "Volt",
+          "Ohm",
+          "Ampere",
+          "Watt"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Organel sel yang berfungsi sebagai pusat penghasil energi (respirasi sel) adalah...",
+        "options": [
+          "Ribosom",
+          "Mitokondria",
+          "Vakuola",
+          "Dinding sel"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Contoh perubahan kimia yang menghasilkan zat baru adalah...",
+        "options": [
+          "Es mencair",
+          "Kertas dipotong",
+          "Besi berkarat",
+          "Air menguap"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Alat optik yang memanfaatkan cermin cekung untuk mengumpulkan cahaya adalah...",
+        "options": [
+          "Spion motor",
+          "Reflektor lampu senter",
+          "Kaca jendela",
+          "Cermin datar"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Jika massa benda 4 kg dan percepatan 3 m/s2, maka besar gaya yang bekerja adalah...",
+        "options": [
+          "7 N",
+          "12 N",
+          "16 N",
+          "1,3 N"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Bagian atom yang bermuatan listrik negatif disebut...",
+        "options": [
+          "Proton",
+          "Neutron",
+          "Elektron",
+          "Inti atom"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      },
+      {
+        "q": "Frekuensi getaran benda yang bergetar 20 kali dalam 4 detik adalah...",
+        "options": [
+          "4 Hz",
+          "5 Hz",
+          "16 Hz",
+          "80 Hz"
+        ],
+        "correctIndex": 1,
+        "timeLimit": 20
+      },
+      {
+        "q": "Jenis pesawat sederhana yang digunakan pada gunting dan jungkat-jungkit adalah...",
+        "options": [
+          "Katrol",
+          "Bidang miring",
+          "Tuas (pengungkit)",
+          "Roda berporos"
+        ],
+        "correctIndex": 2,
+        "timeLimit": 20
+      }
+    ]
+  },
+  "mg-04": {
+    "id": "mg-04",
+    "title": "Sirkuit Balap 3 Gerbang",
+    "subject": "IPA · Biologi & Alam",
+    "grade": "SD & SMP",
+    "description": "Balapan 3 lap (15 gerbang soal) di sirkuit Grand Prix SD & SMP!",
+    "questions": [
+      {
+        "q": "Organ tubuh manusia yang berfungsi memompa darah ke seluruh tubuh adalah...",
+        "options": [
+          "Paru-paru",
+          "Jantung",
+          "Lambung"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hewan yang hanya memakan tumbuhan (seperti sapi dan kelinci) disebut...",
+        "options": [
+          "Karnivora",
+          "Herbivora",
+          "Omnivora"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Planet terdekat dengan Matahari di Tata Surya adalah...",
+        "options": [
+          "Merkurius",
+          "Venus",
+          "Mars"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Bagian daun yang memberi warna hijau untuk fotosintesis disebut...",
+        "options": [
+          "Klorofil",
+          "Stomata",
+          "Xilem"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Hewan katak dapat hidup di darat dan di air sehingga disebut hewan...",
+        "options": [
+          "Mamalia",
+          "Amfibi",
+          "Reptil"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Sumber vitamin C yang banyak ditemukan pada buah jeruk berguna untuk mencegah...",
+        "options": [
+          "Sariawan",
+          "Rabun senja",
+          "Tulang rapuh"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Perubahan wujud air menjadi es di dalam freezer disebut...",
+        "options": [
+          "Mencair",
+          "Membeku",
+          "Menguap"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Benda langit yang memancarkan cahayanya sendiri adalah...",
+        "options": [
+          "Bulan",
+          "Matahari",
+          "Planet"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Alat pernapasan utama pada burung adalah...",
+        "options": [
+          "Paru-paru",
+          "Insang",
+          "Kulit"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Tumbuhan kaktus menyimpan cadangan air di bagian...",
+        "options": [
+          "Daun",
+          "Batang",
+          "Bunga"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hewan yang berkembang biak dengan cara melahirkan disebut...",
+        "options": [
+          "Ovipar",
+          "Vivipar",
+          "Ovovivipar"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hubungan saling menguntungkan antara lebah dan bunga disebut simbiosis...",
+        "options": [
+          "Mutualisme",
+          "Parasitisme",
+          "Komensalisme"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Lapisan udara yang menyelimuti Bumi disebut...",
+        "options": [
+          "Hidrosfer",
+          "Atmosfer",
+          "Litosfer"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Bagian mata yang berfungsi mengatur banyak sedikitnya cahaya masuk adalah...",
+        "options": [
+          "Pupil",
+          "Kornea",
+          "Alis"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Proses jatuhnya serbuk sari ke kepala putik disebut...",
+        "options": [
+          "Penyerbukan",
+          "Pembuahan",
+          "Pencangkokan"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "questionsSD": [
+      {
+        "q": "Organ tubuh manusia yang berfungsi memompa darah ke seluruh tubuh adalah...",
+        "options": [
+          "Paru-paru",
+          "Jantung",
+          "Lambung"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hewan yang hanya memakan tumbuhan (seperti sapi dan kelinci) disebut...",
+        "options": [
+          "Karnivora",
+          "Herbivora",
+          "Omnivora"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Planet terdekat dengan Matahari di Tata Surya adalah...",
+        "options": [
+          "Merkurius",
+          "Venus",
+          "Mars"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Bagian daun yang memberi warna hijau untuk fotosintesis disebut...",
+        "options": [
+          "Klorofil",
+          "Stomata",
+          "Xilem"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Hewan katak dapat hidup di darat dan di air sehingga disebut hewan...",
+        "options": [
+          "Mamalia",
+          "Amfibi",
+          "Reptil"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Sumber vitamin C yang banyak ditemukan pada buah jeruk berguna untuk mencegah...",
+        "options": [
+          "Sariawan",
+          "Rabun senja",
+          "Tulang rapuh"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Perubahan wujud air menjadi es di dalam freezer disebut...",
+        "options": [
+          "Mencair",
+          "Membeku",
+          "Menguap"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Benda langit yang memancarkan cahayanya sendiri adalah...",
+        "options": [
+          "Bulan",
+          "Matahari",
+          "Planet"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Alat pernapasan utama pada burung adalah...",
+        "options": [
+          "Paru-paru",
+          "Insang",
+          "Kulit"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Tumbuhan kaktus menyimpan cadangan air di bagian...",
+        "options": [
+          "Daun",
+          "Batang",
+          "Bunga"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hewan yang berkembang biak dengan cara melahirkan disebut...",
+        "options": [
+          "Ovipar",
+          "Vivipar",
+          "Ovovivipar"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hubungan saling menguntungkan antara lebah dan bunga disebut simbiosis...",
+        "options": [
+          "Mutualisme",
+          "Parasitisme",
+          "Komensalisme"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Lapisan udara yang menyelimuti Bumi disebut...",
+        "options": [
+          "Hidrosfer",
+          "Atmosfer",
+          "Litosfer"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Bagian mata yang berfungsi mengatur banyak sedikitnya cahaya masuk adalah...",
+        "options": [
+          "Pupil",
+          "Kornea",
+          "Alis"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Proses jatuhnya serbuk sari ke kepala putik disebut...",
+        "options": [
+          "Penyerbukan",
+          "Pembuahan",
+          "Pencangkokan"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "questionsSMP": [
+      {
+        "q": "Gas utama yang dibutuhkan tumbuhan hijau saat proses fotosintesis adalah...",
+        "options": [
+          "Karbon Dioksida",
+          "Nitrogen",
+          "Helium"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Pembuluh darah yang mengalirkan darah keluar dari jantung disebut...",
+        "options": [
+          "Arteri",
+          "Vena",
+          "Kapiler"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Enzim ptialin di dalam mulut berfungsi mengubah amilum menjadi...",
+        "options": [
+          "Asam amino",
+          "Maltosa (gula)",
+          "Asam lemak"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Bagian ginjal yang berfungsi menyaring darah untuk membentuk urine primer adalah...",
+        "options": [
+          "Glomerulus",
+          "Ureter",
+          "Kandung kemih"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Jaringan tumbuhan yang berfungsi mengangkut air dan mineral dari akar ke daun adalah...",
+        "options": [
+          "Floem",
+          "Xilem",
+          "Epidermis"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Sel darah yang berperan penting dalam proses pembekuan darah saat luka adalah...",
+        "options": [
+          "Eritrosit",
+          "Leukosit",
+          "Trombosit"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "q": "Hubungan antara benalu dan pohon inangnya termasuk simbiosis...",
+        "options": [
+          "Mutualisme",
+          "Parasitisme",
+          "Komensalisme"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Cacat mata rabun jauh (miopi) dapat dibantu dengan kacamata berlensa...",
+        "options": [
+          "Cekung (negatif)",
+          "Cembung (positif)",
+          "Rangkap"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Pertukaran gas oksigen dan karbon dioksida di paru-paru terjadi pada bagian...",
+        "options": [
+          "Trakea",
+          "Bronkus",
+          "Alveolus"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "q": "Gerak menutupnya daun putri malu ketika disentuh disebut...",
+        "options": [
+          "Seismonasti",
+          "Fototropisme",
+          "Geotropisme"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Lapisan ozon (O3) di stratosfer melindungi Bumi dari radiasi...",
+        "options": [
+          "Inframerah",
+          "Ultraviolet",
+          "Gelombang radio"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Bakteri dan jamur yang menguraikan sisa makhluk hidup dalam ekosistem berperan sebagai...",
+        "options": [
+          "Produsen",
+          "Konsumen",
+          "Dekomposer"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "q": "Sendi yang memungkinkan gerakan ke segala arah seperti pada bahu disebut sendi...",
+        "options": [
+          "Engsel",
+          "Peluru",
+          "Putar"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "q": "Hormon yang mengatur kadar gula dalam darah manusia adalah...",
+        "options": [
+          "Insulin",
+          "Adrenalin",
+          "Tiroksin"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "q": "Zat aditif alami yang biasa digunakan sebagai pewarna hijau makanan adalah...",
+        "options": [
+          "Kunyit",
+          "Daun pandan",
+          "Bit merah"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  }
+}

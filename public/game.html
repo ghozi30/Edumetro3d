@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>EduVerse 3D - Arena Mabar Kelas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%2032%2032%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232563eb%22/><path d=%22M16%207L25%2012V20L16%2025L7%2020V12L16%207Z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.4%22 stroke-linejoin=%22round%22/></svg>">
+</head>
+<body style="overflow: hidden; touch-action: none;">
+
+  <!-- 3D WebGL Canvas Layer -->
+  <div id="game-container">
+    <div id="canvas-container"></div>
+  </div>
+
+  <!-- HUD Interface Layer -->
+  <div class="hud-layer">
+    <!-- Top HUD Bar -->
+    <div class="top-hud-bar">
+      <!-- Room / Mini Game Info + Kembali ke Kota -->
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <a href="index.html" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.9rem; border-radius: 999px; font-size: 0.85rem;">
+          Kota
+        </a>
+        <div class="hud-badge-box">
+          <span id="hud-game-icon" style="font-size:0.85rem;font-weight:800;color:#38bdf8;">ARENA</span>
+          <span id="hud-room-pin" class="hud-pin" style="font-family: inherit; font-size: 0.95rem;">Mini Game</span>
+        </div>
+      </div>
+
+      <!-- Question Counter & Timer -->
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <div id="hud-timer-box" class="hud-badge-box hud-timer-badge">
+          
+          <span id="hud-timer-sec">20s</span>
+        </div>
+        <button id="btn-toggle-sound" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.8rem; border-radius: 999px;"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+      </div>
+
+      <!-- Player Score & Streak -->
+      <div class="hud-score-box">
+        <div class="streak-flame">
+          
+          <span id="hud-streak-count">0</span>
+        </div>
+        <div style="font-weight: 800; color: #ffffff;">
+          <span id="hud-player-score">0</span><span style="font-size: 0.78rem; color: var(--secondary);">PTS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pill Status Zona Ringkas (Soal tampil di Papan 3D agar layar lega!) -->
+    <div style="text-align: center; margin-top: 0.35rem; pointer-events: none;">
+      <span id="hud-standing-zone" class="current-zone-pill zone-pill-none" style="backdrop-filter: blur(10px); box-shadow: 0 4px 14px rgba(0,0,0,0.35);">
+        Lihat Papan Soal 3D di depan &amp; berlari ke Zona A, B, C, atau D!
+      </span>
+    </div>
+
+    <!-- Kanan Atas: Mini-Leaderboard + Tombol Emot Bulat Dropdown -->
+    <div class="geo-right-stack" style="position: absolute; top: 5.5rem; right: 1rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+      <div class="hud-leaderboard hud-interactive" style="position: static;">
+        <h4>Peringkat Kelas <span id="hud-player-count">(0)</span></h4>
+        <div id="hud-rank-list">
+          <div class="rank-item" style="color:var(--text-muted);">Menunggu siswa...</div>
+        </div>
+      </div>
+
+      <div class="emote-dropdown-wrap">
+        <button id="btn-game-emote-toggle" class="emote-fab-btn" title="Pilih Emote"><svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></button>
+        <div id="game-emote-menu" class="emote-dropdown-menu">
+          <button class="emote-btn" data-emote="👍" title="Mantap">👍</button>
+          <button class="emote-btn" data-emote="🔥" title="Semangat">🔥</button>
+          <button class="emote-btn" data-emote="💡" title="Ide Cerdas">💡</button>
+          <button class="emote-btn" data-emote="😂" title="Tertawa">😂</button>
+          <button class="emote-btn" data-emote="👏" title="Tepuk Tangan">👏</button>
+          <button class="emote-btn" data-emote="🏆" title="Juara">🏆</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Controls Panel (Mulai & Lanjut untuk kelas; Edit Soal & Rekap khusus Guru) -->
+    <div id="host-controls-panel" class="host-live-controls hud-interactive" style="display: flex; position: absolute; top: 5.5rem; left: 1rem;">
+      <span id="controls-panel-label" style="font-weight: 800; font-size: 0.85rem; color: var(--secondary);">KONTROL ARENA:</span>
+      <select id="game-level-select" class="form-select" style="width:auto; min-height:38px; padding:0.35rem 0.65rem; font-size:0.8rem; font-weight:700; background:rgba(15,23,42,0.92); color:#38bdf8; border:1px solid rgba(56,189,248,0.45); border-radius:10px;">
+        <option value="sd">Level SD</option>
+        <option value="smp">Level SMP</option>
+      </select>
+      <button id="btn-host-start" class="btn btn-primary" style="padding: 0.5rem 0.9rem; font-size: 0.85rem;">
+        Mulai Kuis
+      </button>
+      <button id="btn-host-reveal" class="btn btn-accent" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; display: none;">
+        Buka Jawaban
+      </button>
+      <button id="btn-host-next" class="btn btn-success" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; display: none;">
+        Soal Berikutnya
+      </button>
+      <a id="btn-host-edit-quiz" href="guru.html" class="btn btn-secondary" style="padding: 0.5rem 0.8rem; font-size: 0.85rem; display: none; border-color: #fbbf24; color: #fde68a;">
+        Edit Soal
+      </a>
+      <button id="btn-host-export" class="btn btn-secondary" style="padding: 0.5rem 0.8rem; font-size: 0.85rem; display: none;">
+        Rekap Nilai CSV
+      </button>
+    </div>
+
+    <!-- Bottom HUD Bar -->
+    <div class="bottom-hud-bar" style="justify-content: flex-end;">
+      <!-- Controls Hint for PC -->
+      <div id="pc-controls-hint" style="background: rgba(15,23,42,0.7); padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.8rem; color: var(--text-muted);">
+        <strong>WASD / Panah</strong>Gerak | <strong>Spasi</strong>Lompat | <strong>Drag Mouse</strong>Putar Kamera
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile On-Screen Controls (Virtual Joystick & Jump Button) -->
+  <div class="mobile-controls">
+    <div id="mobile-joystick-zone">
+      <div id="mobile-joystick-knob"></div>
+    </div>
+    <div id="mobile-jump-btn">
+      <svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      <span>LOMPAT</span>
+    </div>
+  </div>
+
+  <!-- Round Result Modal / Overlay -->
+  <div id="round-result-modal" class="result-overlay" style="display: none;">
+    <div class="glass-panel result-card">
+      <div id="res-icon" class="result-icon" style="font-size:1.4rem; font-weight:800;">HASIL</div>
+      <h2 id="res-title" class="result-title result-correct">JAWABAN BENAR!</h2>
+      <p id="res-pts" style="font-size: 1.15rem; font-weight: 700; color: #ffd166; margin-bottom: 0.6rem;">+150 Poin Diperoleh!</p>
+
+      <div class="explanation-box">
+        <strong>Pembahasan Materi:</strong>
+        <p id="res-explanation" style="margin-top: 0.3rem;">Penjelasan materi soal...</p>
+      </div>
+
+      <div style="background: rgba(15,23,42,0.6); padding: 0.8rem; border-radius: 8px; margin-bottom: 1.2rem; font-size: 0.88rem;">
+        <strong>Sebaran Jawaban Murid Sekelas:</strong>
+        <div id="res-distribution-bars" style="display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.6rem;">
+          <!-- A, B, C, D counts -->
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.7rem; justify-content: center; margin-top: 0.5rem;">
+        <button id="btn-modal-next-q" class="btn btn-success">Lanjut Soal Berikutnya</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Victory Podium Overlay (Game Selesai) -->
+  <div id="victory-modal" class="podium-overlay" style="display: none;">
+    <div class="glass-panel" style="max-width: 650px; width: 92%; padding: 2.2rem; text-align: center;">
+      <h1 style="font-size: 2.2rem; font-weight: 900; background: linear-gradient(135deg, #ffd166, #ff7b00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        PERMAINAN SELESAI! 
+      </h1>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Selamat kepada para juara kelas!</p>
+
+      <!-- 3D-Styled Podium Steps (2nd, 1st, 3rd) -->
+      <div class="podium-container">
+        <!-- Juara 2 -->
+        <div class="podium-slot podium-2">
+          <div style="font-size: 1.3rem; font-weight:800; color:#cbd5e1; margin-bottom: 0.2rem;">#2</div>
+          <div id="podium-name-2" style="font-weight: 800; font-size: 1rem;">-</div>
+          <div id="podium-score-2" style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.5rem;">0 Pts</div>
+          <div class="podium-step">2</div>
+        </div>
+
+        <!-- Juara 1 -->
+        <div class="podium-slot podium-1">
+          <div style="font-size: 1.5rem; font-weight:800; color:#fbbf24; margin-bottom: 0.2rem;">#1</div>
+          <div id="podium-name-1" style="font-weight: 900; font-size: 1.15rem; color: #ffd166;">-</div>
+          <div id="podium-score-1" style="font-size: 0.92rem; color: #ffd166; margin-bottom: 0.5rem;">0 Pts</div>
+          <div class="podium-step">1</div>
+        </div>
+
+        <!-- Juara 3 -->
+        <div class="podium-slot podium-3">
+          <div style="font-size: 1.3rem; font-weight:800; color:#d97706; margin-bottom: 0.2rem;">#3</div>
+          <div id="podium-name-3" style="font-weight: 800; font-size: 1rem;">-</div>
+          <div id="podium-score-3" style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.5rem;">0 Pts</div>
+          <div class="podium-step">3</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+        <button id="btn-play-again" class="btn btn-primary">Main Lagi</button>
+        <a href="index.html" class="btn btn-secondary">Kembali ke Kota</a>
+        <button id="btn-download-grades" class="btn btn-success" style="display: none;">Download Rekap Nilai</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/minigames-registry.js"></script>
+  <script src="js/quiz-data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/world3d.js"></script>
+  <script src="js/avatar3d.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/mobile-controls.js"></script>
+  <script src="js/network.js"></script>
+  <script src="js/game-main.js"></script>
+</body>
+</html>

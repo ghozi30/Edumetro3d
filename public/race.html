@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sirkuit Balap 3 Gerbang — EduMetro 3D</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%2032%2032%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232563eb%22/><path d=%22M16%207L25%2012V20L16%2025L7%2020V12L16%207Z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.4%22 stroke-linejoin=%22round%22/></svg>"><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+  <style>
+    .race-speed-card {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(56, 189, 248, 0.45);
+      border-radius: 16px;
+      padding: 0.45rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    .speed-val {
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-family: monospace;
+      color: #38bdf8;
+    }
+    .speed-turbo { color: #34d399 !important; text-shadow: 0 0 12px rgba(52, 211, 153, 0.7); }
+    .speed-slow { color: #fb7185 !important; }
+    .race-progress-track {
+      width: 150px;
+      height: 10px;
+      background: rgba(255,255,255,0.14);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .race-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #10b981);
+      transition: width 0.15s linear;
+    }
+    #race-countdown-banner {
+      position: fixed;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      font-weight: 900;
+      color: #fbbf24;
+      text-shadow: 0 8px 30px rgba(0,0,0,0.75);
+      z-index: 60;
+      pointer-events: none;
+      display: none;
+    }
+    #race-feedback-toast {
+      position: fixed;
+      top: 5.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1.05rem;
+      z-index: 55;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .toast-turbo { background: linear-gradient(135deg, #10b981, #0ea5e9); color: #0f172a; }
+    .toast-slow { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #ffffff; }
+    .race-radar-wrap {
+      background: rgba(15, 23, 42, 0.86);
+      border: 1.5px solid rgba(56, 189, 248, 0.5);
+      border-radius: 12px;
+      padding: 4px;
+      z-index: 42;
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+    .race-top-right {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      justify-self: end;
+    }
+    @media (max-width: 767px) {
+      .race-radar-wrap {
+        position: fixed;
+        top: max(4.2rem, calc(env(safe-area-inset-top) + 3.6rem));
+        right: max(0.55rem, env(safe-area-inset-right));
+      }
+    }
+  </style>
+</head>
+<body style="overflow: hidden; touch-action: none;">
+
+  <!-- 3D Race Canvas -->
+  <div id="game-container">
+    <div id="canvas-container"></div>
+  </div>
+
+  <!-- Countdown 3-2-1-GO -->
+  <div id="race-countdown-banner">3</div>
+
+  <!-- Toast singkat Turbo / Lemot / Lap (muncul 2 detik) -->
+  <div id="race-feedback-toast" class="toast-turbo">BENAR! TURBO BOOST!</div>
+
+  <!-- HUD Layer -->
+  <div class="hud-layer">
+    <!-- Top Bar (Full-width: Pojok Kiri Atas | Indikator Lap pas di tengah | Suara + Minimap di Pojok Kanan Atas) -->
+    <div class="top-hud-bar" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: start; gap: 0.5rem; max-width: none; width: 100%; margin: 0;">
+      <div style="display: flex; gap: 0.5rem; align-items: center; justify-self: start;">
+        <a href="index.html" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.9rem; border-radius: 999px; font-size: 0.85rem;">
+          Kota
+        </a>
+        <div class="hud-badge-box">
+          
+          <span id="race-title-label" style="color: var(--secondary); font-size: 0.92rem;">Sirkuit Balap 3 Gerbang</span>
+        </div>
+      </div>
+
+      <!-- Speedometer & Progress (Pas di tengah layar!) -->
+      <div class="race-speed-card" style="justify-self: center;">
+        <div>
+          <span id="hud-speed-val" class="speed-val">0</span>
+          <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 700;">KM/H</span>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; margin-bottom: 3px;">
+            <span id="hud-lap-label" style="color:#fde047;">Lap 1/3</span>• <span id="hud-progress-pct">0%</span>• <span id="hud-correct-gates">0/15</span>
+          </div>
+          <div class="race-progress-track">
+            <div id="hud-progress-fill" class="race-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pojok Kanan Atas: Tombol Suara di samping kiri Map, Map mentok pojok kanan atas -->
+      <div class="race-top-right">
+        <button id="btn-toggle-sound" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.85rem; border-radius: 999px;"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+        <div class="race-radar-wrap">
+          <canvas id="race-circuit-radar" width="184" height="184" style="display:block; width:92px; height:92px; border-radius:8px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Panel (Pas di tengah tepat di bawah Indikator Lap, bebas dari Posisi Balap di kiri!) -->
+    <div id="race-controls-wrap" class="host-live-controls hud-interactive" style="position: absolute; top: 5.2rem; left: 50%; transform: translateX(-50%);">
+      <select id="race-level-select" class="form-select" style="width:auto; min-height:38px; padding:0.35rem 0.65rem; font-size:0.8rem; font-weight:700; background:rgba(15,23,42,0.92); color:#38bdf8; border:1px solid rgba(56,189,248,0.45); border-radius:10px;">
+        <option value="sd">Level SD</option>
+        <option value="smp">Level SMP</option>
+      </select>
+      <button id="btn-race-start" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.86rem;">
+        Mulai Balapan!
+      </button>
+      <a id="btn-race-edit-quiz" href="guru.html?game=mg-04" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.84rem; display: none; border-color: #fbbf24; color: #fde68a;">
+        Edit Soal
+      </a>
+    </div>
+
+    <!-- Live Race Standings (Rata kiri mentok di PC agar bebas dari minimap kanan!) -->
+    <div class="hud-leaderboard hud-interactive" style="top: 5.2rem; left: 1rem; right: auto;">
+      <h4>Posisi Balap <span id="race-player-count">(1)</span></h4>
+      <div id="race-rank-list">
+        <div class="rank-item" style="color: var(--text-muted);">Siap di garis start...</div>
+      </div>
+    </div>
+
+    <!-- Bottom Hint PC -->
+    <div class="bottom-hud-bar" style="justify-content: flex-end;">
+      <div id="pc-controls-hint" style="background: rgba(15,23,42,0.78); padding: 0.45rem 0.9rem; border-radius: 10px; font-size: 0.82rem; color: #cbd5e1;">
+        <strong>A / D</strong>atau <strong>/ </strong>Belok ke Gerbang A, B, atau C • <strong>Drag Mouse</strong>Lihat Sekeliling
+      </div>
+    </div>
+  </div>
+
+  <!-- Analog Kiri Bawah untuk HP & Tablet -->
+  <div class="mobile-controls">
+    <div id="mobile-joystick-zone">
+      <div id="mobile-joystick-knob"></div>
+    </div>
+    <div style="display: flex; gap: 0.6rem; pointer-events: auto;">
+      <button id="btn-steer-left" class="btn btn-secondary" style="width: 68px; height: 68px; border-radius: 50%; font-size: 1.5rem; border: 2px solid #38bdf8;"><svg class="ui-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button id="btn-steer-right" class="btn btn-secondary" style="width: 68px; height: 68px; border-radius: 50%; font-size: 1.5rem; border: 2px solid #38bdf8;"><svg class="ui-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Finish Podium Modal -->
+  <div id="race-finish-modal" class="podium-overlay" style="display: none;">
+    <div class="glass-panel" style="max-width: 620px; width: 92%; padding: 2rem; text-align: center;">
+      <h1 style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #fbbf24, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        GARIS FINIS TERCAPAI! 
+      </h1>
+      <p id="finish-summary-text" style="color: #cbd5e1; margin: 0.5rem 0 1.2rem;">Waktu tempuhmu hebat sekali!</p>
+
+      <div id="finish-standings-list" style="background: rgba(15,23,42,0.7); border-radius: 14px; padding: 1rem; margin-bottom: 1.4rem; text-align: left;">
+        <!-- Daftar Juara -->
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-race-again" class="btn btn-primary">Balapan Lagi</button>
+        <a href="index.html" class="btn btn-secondary">Kembali ke Kota</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/mobile-controls.js"></script>
+  <script src="js/race-main.js"></script>
+</body>
+</html>

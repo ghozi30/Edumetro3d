@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lantai Lava Tata Surya — Battle Royale IPA Astronomi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%2032%2032%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232563eb%22/><path d=%22M16%207L25%2012V20L16%2025L7%2020V12L16%207Z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.4%22 stroke-linejoin=%22round%22/></svg>"><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+  <style>
+    .lava-clue-card {
+      max-width: 720px;
+      margin: 0.45rem auto 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid #f97316;
+      border-radius: 18px;
+      padding: 0.7rem 1.3rem;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.35);
+      pointer-events: none;
+    }
+    .lava-round-tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #fbbf24;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .lava-clue-text {
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin-top: 0.15rem;
+    }
+    .lava-info-sub {
+      font-size: 0.84rem;
+      color: #34d399;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+    #spectator-badge {
+      position: fixed;
+      bottom: 6.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(239, 68, 68, 0.92);
+      color: #ffffff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      z-index: 45;
+      display: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+    }
+  </style>
+</head>
+<body style="overflow: hidden; touch-action: none;">
+
+  <!-- 3D Lava Solar Arena Canvas -->
+  <div id="game-container">
+    <div id="canvas-container"></div>
+  </div>
+
+  <!-- Badge Penonton jika Tereliminasi -->
+  <div id="spectator-badge">Kamu Tereliminasi! Mode Penonton — Tunggu Ronde Baru!</div>
+
+  <!-- HUD Layer -->
+  <div class="hud-layer">
+    <!-- Top Bar -->
+    <div class="top-hud-bar">
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <a href="index.html" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.9rem; border-radius: 999px; font-size: 0.85rem;">
+          Kota
+        </a>
+        <div class="hud-badge-box">
+          
+          <span style="color: #fb923c; font-size: 0.92rem;">Lantai Lava Tata Surya</span>
+        </div>
+      </div>
+
+      <!-- Timer 5 Detik -->
+      <div style="display: flex; gap: 0.55rem; align-items: center;">
+        <div id="lava-timer-box" class="hud-badge-box hud-timer-badge">
+          
+          <span id="lava-timer-sec">SIAP</span>
+        </div>
+        <button id="btn-toggle-sound" class="btn btn-secondary hud-interactive" style="padding: 0.5rem 0.8rem; border-radius: 999px;"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+      </div>
+
+      <!-- Status Survivor -->
+      <div class="hud-score-box">
+        <span style="font-size: 0.85rem; color: #34d399; font-weight: 800;">Bertahan: <span id="lava-alive-count">1</span></span>
+      </div>
+    </div>
+
+    <!-- Banner Ciri Cepat Planet -->
+    <div class="lava-clue-card">
+      <div id="lava-round-tag" class="lava-round-tag">BATTLE ROYALE TATA SURYA • 8 PULAU PLANET</div>
+      <div id="lava-clue-text" class="lava-clue-text">Klik "Mulai Battle Royale!" saat teman sekelas siap!</div>
+      <div id="lava-info-sub" class="lava-info-sub"></div>
+    </div>
+
+    <!-- Tombol Mulai Kiri Atas (otomatis tersembunyi saat match berjalan!) -->
+    <div id="lava-controls-wrap" class="host-live-controls hud-interactive" style="position: absolute; top: 5.5rem; left: 1rem;">
+      <select id="lava-level-select" class="form-select" style="width:auto; min-height:38px; padding:0.35rem 0.65rem; font-size:0.8rem; font-weight:700; background:rgba(15,23,42,0.92); color:#38bdf8; border:1px solid rgba(56,189,248,0.45); border-radius:10px;">
+        <option value="sd">Level SD</option>
+        <option value="smp">Level SMP</option>
+      </select>
+      <button id="btn-lava-start" class="btn btn-accent" style="padding: 0.5rem 1rem; font-size: 0.86rem;">
+        Mulai Battle Royale!
+      </button>
+    </div>
+
+    <!-- Kanan Atas: Peringkat Bertahan (ikon pesan/emote kanan atas dihapus agar 0% tumpang tindih banner soal) -->
+    <div class="lava-right-stack" style="position: absolute; top: 5.5rem; right: 1rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;">
+      <div class="hud-leaderboard hud-interactive" style="position: static;">
+        <h4>Bertahan Hidup <span id="lava-total-count">(1)</span></h4>
+        <div id="lava-rank-list">
+          <div class="rank-item" style="color: var(--text-muted);">Siap bermain...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Hint PC -->
+    <div class="bottom-hud-bar" style="justify-content: flex-end;">
+      <div id="pc-controls-hint" style="background: rgba(15,23,42,0.78); padding: 0.45rem 0.85rem; border-radius: 10px; font-size: 0.8rem; color: #cbd5e1;">
+        <strong>WASD / Panah</strong>Lari • <strong>Spasi</strong>Lompat ke Pulau Planet • <strong>Drag Mouse</strong>Kamera Bebas
+      </div>
+    </div>
+  </div>
+
+  <!-- Analog Kiri Bawah + Tombol Lompat Kanan Bawah (HP & Tablet) -->
+  <div class="mobile-controls">
+    <div id="mobile-joystick-zone">
+      <div id="mobile-joystick-knob"></div>
+    </div>
+    <div id="mobile-jump-btn">
+      <svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      <span>LOMPAT</span>
+    </div>
+  </div>
+
+  <!-- Victory Podium Battle Royale Modal -->
+  <div id="lava-finish-modal" class="podium-overlay" style="display: none;">
+    <div class="glass-panel" style="max-width: 600px; width: 92%; padding: 2rem; text-align: center;">
+      <h1 style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #fbbf24, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        JUARA BERTAHAN TATA SURYA! 
+      </h1>
+      <p style="color: #cbd5e1; margin: 0.4rem 0 1.2rem;">Selamat kepada para juara bertahan di atas Lantai Lava!</p>
+
+      <div id="lava-winners-list" style="background: rgba(15,23,42,0.72); border-radius: 14px; padding: 1rem; margin-bottom: 1.4rem; text-align: left;">
+        <!-- 1-3 Juara Bertahan -->
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-lava-play-again" class="btn btn-accent">Battle Royale Lagi</button>
+        <a href="index.html" class="btn btn-secondary">Kembali ke Kota</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/avatar3d.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/mobile-controls.js"></script>
+  <script src="js/lava-main.js"></script>
+</body>
+</html>
